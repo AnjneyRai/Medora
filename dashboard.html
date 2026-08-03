@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -12,371 +11,580 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
 </head>
 
 <body>
 
 <div class="dashboard">
 
-<!-- ================= SIDEBAR ================= -->
+<!-- ===================== SIDEBAR ===================== -->
 
 <aside class="sidebar">
 
     <div class="logo">
 
         <div class="logo-icon">
-            🧠
+
+            <i class="fa-solid fa-heart-pulse"></i>
+
         </div>
 
         <h1>MEDORA</h1>
 
-        <p>AI Health Companion</p>
+        <p>AI Powered Health Companion</p>
 
     </div>
 
     <nav>
 
-        <a class="active">🏠 Dashboard</a>
+        <a class="active">
 
-        <a>➕ Add Prescription</a>
+            <i class="fa-solid fa-house"></i>
 
-        <a>💊 Medicines</a>
+            Dashboard
 
-        <a>⏰ Reminders</a>
+        </a>
 
-        <a>📜 Visit History</a>
+        <a>
 
-        <a>📄 Health Summary</a>
+            <i class="fa-solid fa-file-medical"></i>
 
-        <a>📤 Export PDF</a>
+            Add Prescription
 
-        <a>⚙ Settings</a>
+        </a>
+
+        <a>
+
+            <i class="fa-solid fa-pills"></i>
+
+            Medicines
+
+        </a>
+
+        <a>
+
+            <i class="fa-solid fa-bell"></i>
+
+            Reminders
+
+        </a>
+
+        <a>
+
+            <i class="fa-solid fa-clock-rotate-left"></i>
+
+            Visit History
+
+        </a>
+
+        <a>
+
+            <i class="fa-solid fa-notes-medical"></i>
+
+            Health Summary
+
+        </a>
+
+        <a>
+
+            <i class="fa-solid fa-file-pdf"></i>
+
+            Export PDF
+
+        </a>
+
+        <a>
+
+            <i class="fa-solid fa-gear"></i>
+
+            Settings
+
+        </a>
 
     </nav>
 
 </aside>
 
-<!-- ================= MAIN ================= -->
+<!-- ===================== MAIN ===================== -->
 
 <main class="main-content">
 
-<!-- TOP BAR -->
+<!-- ===================== TOP BAR ===================== -->
 
 <div class="topbar">
 
-    <input
-    type="text"
-    placeholder="🔍 Search medicines, prescriptions, doctors...">
+    <div class="search-box">
 
-    <div class="profile">
+        <i class="fa-solid fa-magnifying-glass"></i>
 
-        👤 Anjney
+        <input
+        type="text"
+        placeholder="Search medicines, prescriptions, doctors...">
+
+    </div>
+
+    <div class="top-icons">
+
+        <div class="notification">
+
+            <i class="fa-regular fa-bell"></i>
+
+        </div>
+
+        <div class="profile">
+
+            <img src="assets/images/profile.png">
+
+            <div>
+
+                <h4>Anjney</h4>
+
+                <p>Patient</p>
+
+            </div>
+
+        </div>
 
     </div>
 
 </div>
 
-<!-- GREETING -->
+<!-- ===================== HERO ===================== -->
 
-<section class="welcome">
+<section class="hero">
 
-<h1>
+    <div>
 
-Good Afternoon, Anjney 👋
+        <h1>
 
-</h1>
+            Good Afternoon, Anjney 👋
 
-<p>
+        </h1>
 
-Here's your health summary for today.
+        <p>
 
-</p>
+            Here's your AI generated health overview for today.
+
+        </p>
+
+    </div>
 
 </section>
 
-<!-- SUMMARY CARDS -->
+<!-- ===================== SUMMARY CARDS ===================== -->
 
 <section class="cards">
 
 <div class="card blue">
 
+<div class="card-icon">
+
+<i class="fa-solid fa-pills"></i>
+
+</div>
+
+<div>
+
 <h2>4</h2>
 
 <h3>Active Medicines</h3>
 
-<p>Currently ongoing</p>
+<p>Currently Ongoing</p>
+
+</div>
 
 </div>
 
 <div class="card green">
 
+<div class="card-icon">
+
+<i class="fa-solid fa-clock"></i>
+
+</div>
+
+<div>
+
 <h2>6</h2>
 
 <h3>Today's Doses</h3>
 
-<p>Scheduled today</p>
+<p>Pending Today</p>
+
+</div>
 
 </div>
 
 <div class="card orange">
 
+<div class="card-icon">
+
+<i class="fa-solid fa-wallet"></i>
+
+</div>
+
+<div>
+
 <h2>₹420</h2>
 
 <h3>Estimated Savings</h3>
 
-<p>Generic medicines</p>
+<p>Generic Alternatives</p>
+
+</div>
 
 </div>
 
 <div class="card purple">
 
+<div class="card-icon">
+
+<i class="fa-solid fa-user-doctor"></i>
+
+</div>
+
+<div>
+
 <h2>8</h2>
 
 <h3>Doctor Visits</h3>
 
-<p>Total recorded</p>
+<p>Total Recorded</p>
+
+</div>
 
 </div>
 
 </section>
 
-<!-- CONTENT -->
+<!-- ====== CONTINUE IN PART 1B ====== -->
+ <!-- ===================== MAIN CONTENT ===================== -->
 
 <section class="content-grid">
 
-<!-- LEFT -->
+    <!-- ================= LEFT COLUMN ================= -->
 
-<div class="left-column">
+    <div class="left-column">
 
-<div class="panel reminders">
+        <!-- REMINDERS -->
 
-<div class="panel-title">
+        <div class="panel">
 
-Today's Reminders
+            <div class="panel-title">
+                Today's Reminders
+            </div>
 
-</div>
+            <div class="reminder-card">
 
-<div class="reminder">
+                <div class="reminder-top">
 
-<span>08:00 AM</span>
+                    <div>
 
-<p>Paracetamol 500mg</p>
+                        <h3>🕗 08:00 AM</h3>
 
-</div>
+                        <p>Paracetamol 500mg</p>
 
-<div class="reminder">
+                    </div>
 
-<span>02:00 PM</span>
+                    <span class="status pending">
+                        Pending
+                    </span>
 
-<p>Vitamin D3</p>
+                </div>
 
-</div>
+                <small>1 Tablet • After Breakfast</small>
 
-<div class="reminder">
+            </div>
 
-<span>08:00 PM</span>
+            <div class="reminder-card">
 
-<p>Cetirizine</p>
+                <div class="reminder-top">
 
-</div>
+                    <div>
 
-</div>
+                        <h3>🕑 02:00 PM</h3>
 
-<div class="panel alerts">
+                        <p>Vitamin D3</p>
 
-<div class="panel-title">
+                    </div>
 
-Alerts & Warnings
+                    <span class="status taken">
+                        Taken
+                    </span>
 
-</div>
+                </div>
 
-<ul>
+                <small>1 Capsule • After Lunch</small>
 
-<li>⚠ Duplicate Medicine Found</li>
+            </div>
 
-<li>🍊 Avoid grapefruit with Cetirizine</li>
+            <div class="reminder-card">
 
-<li>💊 Vitamin D course ends in 2 days</li>
+                <div class="reminder-top">
 
-</ul>
+                    <div>
 
-</div>
+                        <h3>🕗 08:00 PM</h3>
 
-<div class="panel prescription">
+                        <p>Cetirizine</p>
 
-<div class="panel-title">
+                    </div>
 
-Recent Prescription
+                    <span class="status upcoming">
+                        Upcoming
+                    </span>
 
-</div>
+                </div>
 
-<p>
+                <small>1 Tablet • Before Sleep</small>
 
-Dr. Sharma
+            </div>
 
-</p>
+        </div>
 
-<p>
+        <!-- ALERTS -->
 
-Paracetamol
+        <div class="panel">
 
-Vitamin D
+            <div class="panel-title">
 
-Cetirizine
+                Alerts & Warnings
 
-</p>
+            </div>
 
-</div>
+            <div class="alert warning">
 
-</div>
+                ⚠ Duplicate medicine detected.
 
-<!-- RIGHT -->
+            </div>
 
-<div class="right-column">
+            <div class="alert info">
 
-<div class="panel ai-panel">
+                🍊 Avoid grapefruit with Cetirizine.
 
-<h2>
+            </div>
 
-🤖 AI Dashboard
+            <div class="alert success">
 
-</h2>
+                💊 Vitamin D course ends in 2 days.
 
-<div class="ai-summary">
+            </div>
 
-<h4>
+        </div>
 
-Today's AI Summary
+        <!-- RECENT PRESCRIPTION -->
 
-</h4>
+        <div class="panel">
 
-<ul>
+            <div class="panel-title">
 
-<li>✔ No dangerous medicine interactions.</li>
+                Recent Prescription
 
-<li>✔ Estimated monthly savings ₹420.</li>
+            </div>
 
-<li>✔ Drink more water today.</li>
+            <h3>Dr. Sharma</h3>
 
-<li>✔ Your Vitamin D course ends in 2 days.</li>
+            <p>Apollo Hospital</p>
 
-</ul>
+            <br>
 
-</div>
+            <ul>
 
-<input
+                <li>Paracetamol 500mg</li>
 
-type="text"
+                <li>Vitamin D3</li>
 
-placeholder="Ask Medora AI...">
+                <li>Cetirizine</li>
 
-<button>
+            </ul>
 
-Ask AI
+            <br>
 
-</button>
+            <button class="primary-btn">
 
-</div>
+                View Prescription
 
-<div class="panel health">
+            </button>
 
-<h3>
+        </div>
 
-Health Tip
+    </div>
 
-</h3>
+    <!-- ================= RIGHT COLUMN ================= -->
 
-<p>
+    <div class="right-column">
 
-Walk at least 30 minutes today.
+        <div class="panel ai-panel">
 
-Staying active reduces blood pressure and improves heart health.
+            <h2>
 
-</p>
+                🤖 AI Dashboard
 
-</div>
+            </h2>
 
-</div>
+            <div class="ai-summary">
+
+                <h4>
+
+                    Today's AI Summary
+
+                </h4>
+
+                <ul>
+
+                    <li>✔ No dangerous medicine interactions detected.</li>
+
+                    <li>✔ Estimated monthly savings ₹420.</li>
+
+                    <li>✔ Stay hydrated today.</li>
+
+                    <li>✔ Vitamin D course ends in 2 days.</li>
+
+                </ul>
+
+            </div>
+
+            <div class="ai-quick-questions">
+
+                <button class="question-btn">
+
+                    💊 Can any of my medicines interact?
+
+                </button>
+
+                <button class="question-btn">
+
+                    🥗 Which foods should I avoid today?
+
+                </button>
+
+            </div>
+
+            <input
+
+            type="text"
+
+            placeholder="Ask Medora AI anything...">
+
+            <button class="ask-btn">
+
+                Ask AI
+
+            </button>
+
+        </div>
+
+        <!-- HEALTH TIP -->
+
+        <div class="panel health">
+
+            <h3>
+
+                Today's Health Tip
+
+            </h3>
+
+            <p>
+
+                A 30-minute walk today can improve heart health,
+                blood circulation and reduce stress.
+
+            </p>
+
+        </div>
+
+    </div>
 
 </section>
 
-<!-- ARTICLES -->
+<!-- ================= ARTICLES ================= -->
 
 <section class="articles">
 
-<h2>
+    <h2>
 
-Recommended Medical Articles
+        Recommended Medical Articles
 
-</h2>
+    </h2>
 
-<div class="article-grid">
+    <div class="article-grid">
 
-<div class="article">
+        <div class="article">
 
-<h4>
+            <div class="article-image"></div>
 
-Understanding Blood Pressure
+            <h4>
 
-</h4>
+                Understanding Blood Pressure
 
-<p>
+            </h4>
 
-American Heart Association
+            <p>
 
-</p>
+                American Heart Association
 
-</div>
+            </p>
 
-<div class="article">
+        </div>
 
-<h4>
+        <div class="article">
 
-Managing Diabetes
+            <div class="article-image"></div>
 
-</h4>
+            <h4>
 
-<p>
+                Managing Diabetes Effectively
 
-Mayo Clinic
+            </h4>
 
-</p>
+            <p>
 
-</div>
+                Mayo Clinic
 
-<div class="article">
+            </p>
 
-<h4>
+        </div>
 
-Foods That Improve Immunity
+        <div class="article">
 
-</h4>
+            <div class="article-image"></div>
 
-<p>
+            <h4>
 
-WHO
+                Foods That Improve Immunity
 
-</p>
+            </h4>
 
-</div>
+            <p>
 
-<div class="article">
+                World Health Organization
 
-<h4>
+            </p>
 
-Better Sleep Habits
+        </div>
 
-</h4>
+        <div class="article">
 
-<p>
+            <div class="article-image"></div>
 
-NIH
+            <h4>
 
-</p>
+                Better Sleep Habits
 
-</div>
+            </h4>
 
-</div>
+            <p>
+
+                National Institutes of Health
+
+            </p>
+
+        </div>
+
+    </div>
 
 </section>
 
