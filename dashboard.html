@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Medora Dashboard</title>
+
+    <link rel="stylesheet" href="css/dashboard.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<!-- ================= SIDEBAR ================= -->
+
+<aside class="sidebar">
+
+    <div class="logo">
+
+        <div class="logo-icon">
+            🧠
+        </div>
+
+        <h1>MEDORA</h1>
+
+        <p>AI Health Companion</p>
+
+    </div>
+
+    <nav>
+
+        <a class="active">🏠 Dashboard</a>
+
+        <a>➕ Add Prescription</a>
+
+        <a>💊 Medicines</a>
+
+        <a>⏰ Reminders</a>
+
+        <a>📜 Visit History</a>
+
+        <a>📄 Health Summary</a>
+
+        <a>📤 Export PDF</a>
+
+        <a>⚙ Settings</a>
+
+    </nav>
+
+</aside>
+
+<!-- ================= MAIN ================= -->
+
+<main class="main-content">
+
+<!-- TOP BAR -->
+
+<div class="topbar">
+
+    <input
+    type="text"
+    placeholder="🔍 Search medicines, prescriptions, doctors...">
+
+    <div class="profile">
+
+        👤 Anjney
+
+    </div>
+
+</div>
+
+<!-- GREETING -->
+
+<section class="welcome">
+
+<h1>
+
+Good Afternoon, Anjney 👋
+
+</h1>
+
+<p>
+
+Here's your health summary for today.
+
+</p>
+
+</section>
+
+<!-- SUMMARY CARDS -->
+
+<section class="cards">
+
+<div class="card blue">
+
+<h2>4</h2>
+
+<h3>Active Medicines</h3>
+
+<p>Currently ongoing</p>
+
+</div>
+
+<div class="card green">
+
+<h2>6</h2>
+
+<h3>Today's Doses</h3>
+
+<p>Scheduled today</p>
+
+</div>
+
+<div class="card orange">
+
+<h2>₹420</h2>
+
+<h3>Estimated Savings</h3>
+
+<p>Generic medicines</p>
+
+</div>
+
+<div class="card purple">
+
+<h2>8</h2>
+
+<h3>Doctor Visits</h3>
+
+<p>Total recorded</p>
+
+</div>
+
+</section>
+
+<!-- CONTENT -->
+
+<section class="content-grid">
+
+<!-- LEFT -->
+
+<div class="left-column">
+
+<div class="panel reminders">
+
+<div class="panel-title">
+
+Today's Reminders
+
+</div>
+
+<div class="reminder">
+
+<span>08:00 AM</span>
+
+<p>Paracetamol 500mg</p>
+
+</div>
+
+<div class="reminder">
+
+<span>02:00 PM</span>
+
+<p>Vitamin D3</p>
+
+</div>
+
+<div class="reminder">
+
+<span>08:00 PM</span>
+
+<p>Cetirizine</p>
+
+</div>
+
+</div>
+
+<div class="panel alerts">
+
+<div class="panel-title">
+
+Alerts & Warnings
+
+</div>
+
+<ul>
+
+<li>⚠ Duplicate Medicine Found</li>
+
+<li>🍊 Avoid grapefruit with Cetirizine</li>
+
+<li>💊 Vitamin D course ends in 2 days</li>
+
+</ul>
+
+</div>
+
+<div class="panel prescription">
+
+<div class="panel-title">
+
+Recent Prescription
+
+</div>
+
+<p>
+
+Dr. Sharma
+
+</p>
+
+<p>
+
+Paracetamol
+
+Vitamin D
+
+Cetirizine
+
+</p>
+
+</div>
+
+</div>
+
+<!-- RIGHT -->
+
+<div class="right-column">
+
+<div class="panel ai-panel">
+
+<h2>
+
+🤖 AI Dashboard
+
+</h2>
+
+<div class="ai-summary">
+
+<h4>
+
+Today's AI Summary
+
+</h4>
+
+<ul>
+
+<li>✔ No dangerous medicine interactions.</li>
+
+<li>✔ Estimated monthly savings ₹420.</li>
+
+<li>✔ Drink more water today.</li>
+
+<li>✔ Your Vitamin D course ends in 2 days.</li>
+
+</ul>
+
+</div>
+
+<input
+
+type="text"
+
+placeholder="Ask Medora AI...">
+
+<button>
+
+Ask AI
+
+</button>
+
+</div>
+
+<div class="panel health">
+
+<h3>
+
+Health Tip
+
+</h3>
+
+<p>
+
+Walk at least 30 minutes today.
+
+Staying active reduces blood pressure and improves heart health.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ARTICLES -->
+
+<section class="articles">
+
+<h2>
+
+Recommended Medical Articles
+
+</h2>
+
+<div class="article-grid">
+
+<div class="article">
+
+<h4>
+
+Understanding Blood Pressure
+
+</h4>
+
+<p>
+
+American Heart Association
+
+</p>
+
+</div>
+
+<div class="article">
+
+<h4>
+
+Managing Diabetes
+
+</h4>
+
+<p>
+
+Mayo Clinic
+
+</p>
+
+</div>
+
+<div class="article">
+
+<h4>
+
+Foods That Improve Immunity
+
+</h4>
+
+<p>
+
+WHO
+
+</p>
+
+</div>
+
+<div class="article">
+
+<h4>
+
+Better Sleep Habits
+
+</h4>
+
+<p>
+
+NIH
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+</div>
+
+<script src="js/dashboard.js"></script>
+
+</body>
+
+</html>
