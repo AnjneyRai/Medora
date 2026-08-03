@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Medora | Prescription</title>
+
+<link rel="stylesheet" href="css/prescription.css">
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<!-- HEADER -->
+
+<header class="header">
+
+    <div class="brand">
+
+        <h1>🩺 Medora</h1>
+
+        <p>
+            AI Powered Healthcare Companion
+        </p>
+
+    </div>
+
+
+    <button class="dashboard-btn">
+        ← Dashboard
+    </button>
+
+
+</header>
+
+
+
+
+<!-- PAGE TITLE -->
+
+<section class="page-title">
+
+<h2>Create Prescription</h2>
+
+<p>
+Enter prescription details and let Medora manage intelligent healthcare.
+</p>
+
+</section>
+
+
+
+
+
+<!-- PATIENT INFORMATION -->
+
+<section class="card">
+
+
+<h3>👤 Patient Information</h3>
+
+
+<div class="form-grid">
+
+
+<div class="field">
+
+<label>
+Patient Name
+</label>
+
+<input 
+type="text"
+id="patientName"
+placeholder="Enter patient name">
+
+</div>
+
+
+
+<div class="field">
+
+<label>
+Age
+</label>
+
+<input 
+type="number"
+id="age"
+placeholder="Age">
+
+</div>
+
+
+
+<div class="field">
+
+<label>
+Blood Group
+</label>
+
+<input 
+type="text"
+id="bloodGroup"
+placeholder="B+">
+
+</div>
+
+
+
+<div class="field">
+
+<label>
+Allergies
+</label>
+
+<input 
+type="text"
+id="allergies"
+placeholder="None">
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<!-- DOCTOR DETAILS -->
+
+<section class="card">
+
+
+<h3>👨‍⚕️ Doctor Details</h3>
+
+
+<div class="form-grid">
+
+
+<div class="field">
+
+<label>
+Doctor Name
+</label>
+
+<input 
+type="text"
+id="doctor"
+placeholder="Dr Sharma">
+
+</div>
+
+
+
+<div class="field">
+
+<label>
+Hospital
+</label>
+
+<input 
+type="text"
+id="hospital"
+placeholder="Apollo Hospital">
+
+</div>
+
+
+
+<div class="field">
+
+<label>
+Visit Date
+</label>
+
+<input 
+type="date"
+id="date">
+
+</div>
+
+
+<div class="field">
+
+<label>
+Specialization
+</label>
+
+<input 
+type="text"
+id="specialization"
+placeholder="Cardiology">
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- MEDICINE SECTION -->
+
+<section class="card">
+
+
+<div class="medicine-heading">
+
+
+<h3>💊 Medicines</h3>
+
+
+<button 
+id="addMedicine"
+class="add-btn">
+
++ Add Another Medicine
+
+</button>
+
+
+</div>
+
+
+
+
+
+<div id="medicineContainer">
+
+
+
+<!-- DEFAULT MEDICINE CARD -->
+
+
+<div class="medicine-card">
+
+
+
+<div class="form-grid">
+
+
+<div class="field">
+
+<label>
+Medicine Name
+</label>
+
+<input
+type="text"
+class="medicine-name"
+placeholder="Paracetamol">
+
+</div>
+
+
+
+
+<div class="field">
+
+<label>
+Strength
+</label>
+
+<input
+type="text"
+class="medicine-strength"
+placeholder="500mg">
+
+</div>
+
+
+
+
+<div class="field">
+
+<label>
+Duration (Days)
+</label>
+
+<input
+type="number"
+class="medicine-duration"
+placeholder="5">
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="timing">
+
+
+<label>
+
+<input 
+type="checkbox"
+class="morning">
+
+Morning
+
+</label>
+
+
+
+
+<label>
+
+<input 
+type="checkbox"
+class="afternoon">
+
+Afternoon
+
+</label>
+
+
+
+
+
+<label>
+
+<input 
+type="checkbox"
+class="night">
+
+Night
+
+</label>
+
+
+</div>
+
+
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- AI FEATURES -->
+
+
+<section class="ai-grid">
+
+
+
+<div class="ai-card">
+
+<h3>
+🧠 Generic Medicine Suggestion
+</h3>
+
+<p id="genericSuggestion">
+
+Medora AI suggestions will appear here.
+
+</p>
+
+</div>
+
+
+
+
+
+<div class="ai-card warning">
+
+<h3>
+⚠ Food Interaction Warning
+</h3>
+
+<p id="foodWarning">
+
+No warnings detected.
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="ai-card">
+
+<h3>
+🔍 Duplicate Medicine Detection
+</h3>
+
+
+<p id="duplicateCheck">
+
+Checking medicines...
+
+</p>
+
+
+</div>
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- AI HEALTH SUMMARY -->
+
+
+<section class="card">
+
+
+<h3>
+🤖 Medora AI Health Summary
+</h3>
+
+
+<div id="healthSummary"
+class="summary-box">
+
+
+Your AI generated health summary will appear here.
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- ACTION BUTTONS -->
+
+
+<div class="actions">
+
+
+<button 
+id="savePrescription"
+class="save-btn">
+
+Save Prescription
+
+</button>
+
+
+
+
+<button
+id="pdfButton"
+class="pdf-btn">
+
+Export Health Summary PDF
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+<script src="js/prescription.js"></script>
+
+
+</body>
+
+</html>
