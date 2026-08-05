@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Medora | Medicine Reminder</title>
+
+<link rel="stylesheet" href="css/reminder.css">
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<!-- HEADER -->
+
+<header class="header">
+
+    <div class="brand">
+
+        <h1>💊 Medora</h1>
+
+        <p>Smart Medicine Schedule</p>
+
+    </div>
+
+
+    <button class="back-btn" onclick="history.back()">
+        ← Dashboard
+    </button>
+
+
+</header>
+
+
+
+
+<!-- HERO SECTION -->
+
+<section class="hero panel">
+
+
+    <div>
+
+        <h2>
+            Stay Consistent With Your Medicines
+        </h2>
+
+        <p>
+            Manage your daily medication schedule easily.
+        </p>
+
+    </div>
+
+
+
+    <div class="next-dose">
+
+        <span>Next Dose</span>
+
+        <h1>08:00 AM</h1>
+
+        <p>Paracetamol 500mg</p>
+
+    </div>
+
+
+
+</section>
+
+
+
+
+
+
+<!-- MAIN GRID -->
+
+
+<div class="main-grid">
+
+
+
+
+
+<!-- TODAY'S MEDICINES -->
+
+
+<section class="panel schedule">
+
+
+<div class="section-title">
+
+<h2>Today's Schedule</h2>
+
+</div>
+
+
+
+<div class="medicine-card">
+
+
+<div class="time">
+
+08:00 AM
+
+</div>
+
+
+<div class="medicine-info">
+
+<h3>Paracetamol 500mg</h3>
+
+<p>After Breakfast</p>
+
+</div>
+
+
+
+<button class="pending">
+
+Pending
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+<div class="medicine-card">
+
+
+<div class="time">
+
+02:00 PM
+
+</div>
+
+
+<div class="medicine-info">
+
+<h3>Vitamin D3</h3>
+
+<p>After Lunch</p>
+
+</div>
+
+
+
+<button class="pending">
+
+Pending
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="medicine-card">
+
+
+<div class="time">
+
+08:00 PM
+
+</div>
+
+
+<div class="medicine-info">
+
+<h3>Cetirizine</h3>
+
+<p>Before Sleep</p>
+
+</div>
+
+
+
+<button class="taken">
+
+Taken
+
+</button>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- ADD REMINDER -->
+
+
+<section class="panel add-box">
+
+
+<div class="section-title">
+
+<h2>Add Reminder</h2>
+
+</div>
+
+
+
+<form id="reminderForm">
+
+
+
+<div class="input-group">
+
+<label>
+Medicine Name
+</label>
+
+<input 
+type="text"
+id="medicineName"
+placeholder="Enter medicine name">
+
+</div>
+
+
+
+
+
+<div class="input-group">
+
+<label>
+Dosage
+</label>
+
+<input 
+type="text"
+id="dosage"
+placeholder="500 mg / 1 Tablet">
+
+</div>
+
+
+
+
+
+<div class="input-group">
+
+<label>
+Time
+</label>
+
+<input 
+type="time"
+id="time">
+
+</div>
+
+
+
+
+
+<div class="input-group">
+
+<label>
+Frequency
+</label>
+
+
+<select id="frequency">
+
+<option>Daily</option>
+
+<option>Once</option>
+
+<option>Weekly</option>
+
+</select>
+
+
+</div>
+
+
+
+
+
+<div class="input-group">
+
+<label>
+Food Instruction
+</label>
+
+
+<select id="food">
+
+<option>After Food</option>
+
+<option>Before Food</option>
+
+<option>Any Time</option>
+
+
+</select>
+
+
+</div>
+
+
+
+
+<button class="save-btn">
+
++ Add Reminder
+
+</button>
+
+
+
+</form>
+
+
+</section>
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- UPCOMING -->
+
+
+<section class="panel upcoming">
+
+
+<div class="section-title">
+
+<h2>Upcoming Medicines</h2>
+
+</div>
+
+
+
+<div class="upcoming-card">
+
+
+<div>
+
+<h3>
+Tomorrow
+</h3>
+
+
+<p>
+09:00 AM • Amoxicillin
+</p>
+
+
+</div>
+
+
+<span>
+Scheduled
+</span>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+</div>
+
+
+
+<script src="js/reminder.js"></script>
+
+
+</body>
+
+</html>
