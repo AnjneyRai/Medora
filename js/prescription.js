@@ -1,353 +1,360 @@
-// ================================
+// =====================================================
 // MEDORA PRESCRIPTION JAVASCRIPT
-// ================================
+// AI CONNECTED VERSION
+// =====================================================
 
 
-// ================================
+
+// =====================================================
+// DASHBOARD BUTTON
+// =====================================================
+
+const dashboardBtn = document.querySelector(".dashboard-btn");
+
+
+if(dashboardBtn){
+
+    dashboardBtn.addEventListener("click",()=>{
+
+        window.location.href="dashboard.html";
+
+    });
+
+}
+
+
+
+
+// =====================================================
 // ADD MEDICINE FUNCTION
-// ================================
+// =====================================================
 
 
-const addMedicineBtn = document.getElementById("addMedicine");
-
-const medicineContainer = document.getElementById("medicineContainer");
-
+const addMedicineBtn =
+document.getElementById("addMedicine");
 
 
-addMedicineBtn.addEventListener("click", function(){
-
-
-    const medicineCard = document.createElement("div");
-
-    medicineCard.classList.add("medicine-card");
-
-
-    medicineCard.innerHTML = `
-
-    <div class="form-grid">
-
-
-        <div class="field">
-
-            <label>
-            Medicine Name
-            </label>
-
-            <input 
-            type="text"
-            class="medicine-name"
-            placeholder="Medicine name">
-
-        </div>
+const medicineContainer =
+document.getElementById("medicineContainer");
 
 
 
-        <div class="field">
+if(addMedicineBtn){
 
-            <label>
-            Strength
-            </label>
 
-            <input
-            type="text"
-            class="medicine-strength"
-            placeholder="500mg">
+addMedicineBtn.addEventListener("click",()=>{
 
-        </div>
+
+const medicineCard=document.createElement("div");
+
+
+medicineCard.classList.add("medicine-card");
 
 
 
-        <div class="field">
-
-            <label>
-            Duration (Days)
-            </label>
-
-            <input
-            type="number"
-            class="medicine-duration"
-            placeholder="5">
-
-        </div>
+medicineCard.innerHTML=`
 
 
-    </div>
+<div class="form-grid">
 
 
+<div class="field">
 
-    <div class="timing">
+<label>
+Medicine Name
+</label>
 
+<input 
+type="text"
+class="medicine-name"
+placeholder="Medicine name">
 
-        <label>
-
-        <input 
-        type="checkbox"
-        class="morning">
-
-        Morning
-
-        </label>
+</div>
 
 
 
+<div class="field">
 
-        <label>
+<label>
+Strength
+</label>
 
-        <input 
-        type="checkbox"
-        class="afternoon">
+<input
+type="text"
+class="medicine-strength"
+placeholder="500mg">
 
-        Afternoon
-
-        </label>
-
-
-
-
-        <label>
-
-        <input 
-        type="checkbox"
-        class="night">
-
-        Night
-
-        </label>
+</div>
 
 
 
-    </div>
+<div class="field">
+
+<label>
+Duration (Days)
+</label>
+
+<input
+type="number"
+class="medicine-duration"
+placeholder="5">
+
+</div>
 
 
-    `;
+</div>
 
 
 
-    medicineContainer.appendChild(medicineCard);
+<div class="timing">
+
+
+<label>
+
+<input 
+type="checkbox"
+class="morning">
+
+Morning
+
+</label>
+
+
+<label>
+
+<input 
+type="checkbox"
+class="afternoon">
+
+Afternoon
+
+</label>
+
+
+
+<label>
+
+<input 
+type="checkbox"
+class="night">
+
+Night
+
+</label>
+
+
+</div>
+
+
+`;
+
+
+medicineContainer.appendChild(medicineCard);
 
 
 
 });
 
+}
 
 
 
-
-
-// ================================
+// =====================================================
 // GENERIC MEDICINE AI SUGGESTION
-// ================================
+// =====================================================
 
 
-const genericSuggestion =
-document.getElementById("genericSuggestion");
+const genericDatabase={
 
 
-
-const genericDatabase = {
-
-
-    "crocin":
-    "Generic equivalent: Paracetamol",
+"crocin":
+"Generic Alternative: Paracetamol",
 
 
-    "dolo":
-    "Generic equivalent: Paracetamol",
+"dolo":
+"Generic Alternative: Paracetamol",
 
 
-    "azithral":
-    "Generic equivalent: Azithromycin",
+"calpol":
+"Generic Alternative: Paracetamol",
 
 
-    "augmentin":
-    "Generic equivalent: Amoxicillin + Clavulanic Acid",
+"azithral":
+"Generic Alternative: Azithromycin",
 
 
-    "calpol":
-    "Generic equivalent: Paracetamol"
+"augmentin":
+"Generic Alternative: Amoxicillin + Clavulanic Acid"
 
 
 };
 
 
 
-document.addEventListener("input",function(e){
 
 
-    if(e.target.classList.contains("medicine-name")){
+document.addEventListener(
+"input",
+function(e){
 
 
-        let medicine =
-        e.target.value.toLowerCase();
+if(e.target.classList.contains("medicine-name")){
 
 
+let medicine =
+e.target.value.toLowerCase().trim();
 
-        if(genericDatabase[medicine]){
 
 
-            genericSuggestion.innerHTML =
-            "💊 " + genericDatabase[medicine];
+let genericBox =
+document.getElementById("genericSuggestion");
 
 
-        }
 
-        else{
+if(genericBox){
 
 
-            genericSuggestion.innerHTML =
-            "Medora AI suggestions will appear here.";
+genericBox.innerHTML =
 
+genericDatabase[medicine]
 
-        }
+?
+"💊 "+genericDatabase[medicine]
 
+:
 
-    }
+"Medora AI suggestions will appear here.";
 
 
-});
+}
 
 
 
+checkFoodInteraction(medicine);
 
-
-
-
-
-// ================================
-// FOOD INTERACTION WARNING
-// ================================
-
-
-const foodWarning =
-document.getElementById("foodWarning");
-
-
-
-const riskyMedicines=[
-
-    "azithral",
-    "augmentin",
-    "amoxicillin",
-    "ciprofloxacin"
-
-];
-
-
-
-
-document.addEventListener("input",function(e){
-
-
-    if(e.target.classList.contains("medicine-name")){
-
-
-        let medicine =
-        e.target.value.toLowerCase();
-
-
-
-        if(riskyMedicines.includes(medicine)){
-
-
-            foodWarning.innerHTML =
-            "⚠ Avoid alcohol and follow doctor's food instructions.";
-
-
-        }
-
-        else{
-
-
-            foodWarning.innerHTML =
-            "No warnings detected.";
-
-        }
-
-
-    }
-
-
-
-});
-
-
-
-
-
-
-
-// ================================
-// DUPLICATE MEDICINE DETECTION
-// ================================
-
-
-const duplicateCheck =
-document.getElementById("duplicateCheck");
-
-
-
-
-function checkDuplicateMedicines(){
-
-
-    let medicines =
-    document.querySelectorAll(".medicine-name");
-
-
-
-    let medicineArray=[];
-
-
-
-    medicines.forEach(function(item){
-
-
-        if(item.value.trim()!=""){
-
-
-            medicineArray.push(
-                item.value.toLowerCase()
-            );
-
-
-        }
-
-
-    });
-
-
-
-    let duplicate =
-    medicineArray.some(
-        (item,index)=>
-        medicineArray.indexOf(item)!==index
-    );
-
-
-
-
-    if(duplicate){
-
-
-        duplicateCheck.innerHTML =
-        "⚠ Duplicate medicine detected. Please verify.";
-
-
-    }
-
-    else{
-
-
-        duplicateCheck.innerHTML =
-        "✓ No duplicate medicines found.";
-
-
-    }
+checkDuplicateMedicines();
 
 
 
 }
 
+
+
+});
+
+
+
+
+
+
+// =====================================================
+// FOOD INTERACTION WARNING
+// =====================================================
+
+
+function checkFoodInteraction(medicine){
+
+
+const warningBox =
+document.getElementById("foodWarning");
+
+
+if(!warningBox)
+return;
+
+
+
+const warnings={
+
+
+"azithral":
+"⚠ Avoid alcohol. Follow doctor's instructions.",
+
+
+"ciprofloxacin":
+"⚠ Avoid dairy products near medication time.",
+
+
+"warfarin":
+"⚠ Maintain consistent Vitamin K intake.",
+
+
+"augmentin":
+"⚠ Prefer taking after meals."
+
+
+};
+
+
+
+warningBox.innerHTML =
+
+warnings[medicine] ||
+
+"✓ No food interaction detected.";
+
+
+
+}
+
+
+
+
+
+
+// =====================================================
+// DUPLICATE MEDICINE DETECTION
+// =====================================================
+
+
+function checkDuplicateMedicines(){
+
+
+const medicines =
+
+[...document.querySelectorAll(".medicine-name")]
+
+.map(m=>m.value.toLowerCase().trim())
+
+.filter(Boolean);
+
+
+
+const duplicateBox =
+document.getElementById("duplicateCheck");
+
+
+
+if(!duplicateBox)
+return;
+
+
+
+const duplicate =
+
+medicines.some(
+
+(item,index)=>
+
+medicines.indexOf(item)!==index
+
+);
+
+
+
+duplicateBox.innerHTML = duplicate
+
+?
+
+"⚠ Duplicate medicine detected. Verify prescription."
+
+:
+
+"✓ No duplicate medicines found.";
+
+
+
+}
 
 
 
@@ -361,11 +368,13 @@ checkDuplicateMedicines
 
 
 
+// =====================================================
+// SAVE PRESCRIPTION + AI BACKEND
+// =====================================================
 
 
-// ================================
-// AI HEALTH SUMMARY
-// ================================
+const saveBtn =
+document.getElementById("savePrescription");
 
 
 
@@ -374,49 +383,67 @@ document.getElementById("healthSummary");
 
 
 
-document.getElementById("savePrescription")
-.addEventListener("click",function(){
+
+
+if(saveBtn){
 
 
 
-    let patient =
-    document.getElementById("patientName").value;
+saveBtn.addEventListener(
+"click",
+async()=>{
 
 
 
-    let doctor =
-    document.getElementById("doctor").value;
+let medicines=[];
 
 
 
-    let medicines =
-    [...document.querySelectorAll(".medicine-name")]
-    .map(m=>m.value)
-    .filter(Boolean)
-    .join(", ");
+document.querySelectorAll(".medicine-card")
+
+.forEach(card=>{
+
+
+let name =
+
+card.querySelector(".medicine-name").value.trim();
 
 
 
+if(name){
 
-    healthSummary.innerHTML = `
 
-    <b>Patient:</b> ${patient || "Not provided"}
-    <br><br>
+medicines.push({
 
-    <b>Consulting Doctor:</b>
-    ${doctor || "Not provided"}
 
-    <br><br>
+name:name,
 
-    <b>Prescribed Medicines:</b>
-    ${medicines || "No medicines added"}
 
-    <br><br>
+strength:
+card.querySelector(".medicine-strength").value,
 
-    Medora AI has generated this health summary 
-    for better doctor consultation.
 
-    `;
+duration:
+card.querySelector(".medicine-duration").value,
+
+
+morning:
+card.querySelector(".morning").checked,
+
+
+afternoon:
+card.querySelector(".afternoon").checked,
+
+
+night:
+card.querySelector(".night").checked
+
+
+
+});
+
+
+}
 
 
 
@@ -426,70 +453,288 @@ document.getElementById("savePrescription")
 
 
 
+if(medicines.length===0){
+
+
+alert(
+"Please add at least one medicine."
+);
+
+
+return;
+
+
+}
 
 
 
 
-// ================================
+let prescriptionData={
+
+
+
+patient_name:
+
+document.getElementById("patientName").value,
+
+
+age:
+
+document.getElementById("age").value,
+
+
+blood_group:
+
+document.getElementById("bloodGroup").value,
+
+
+allergies:
+
+document.getElementById("allergies").value,
+
+
+doctor:
+
+document.getElementById("doctor").value,
+
+
+hospital:
+
+document.getElementById("hospital").value,
+
+
+visit_date:
+
+document.getElementById("date").value,
+
+
+specialization:
+
+document.getElementById("specialization").value,
+
+
+medicines:medicines
+
+
+
+};
+
+
+
+
+
+
+// AI LOADING MESSAGE
+
+
+healthSummary.innerHTML=`
+
+<h3>
+🤖 Medora AI is analyzing...
+</h3>
+
+<p>
+Checking medicine safety, interactions and health recommendations.
+</p>
+
+`;
+
+
+
+
+
+
+try{
+
+
+const response = await fetch(
+
+"http://127.0.0.1:5000/save_prescription",
+
+{
+
+
+method:"POST",
+
+
+headers:{
+
+"Content-Type":"application/json"
+
+},
+
+
+body:
+
+JSON.stringify(prescriptionData)
+
+
+
+}
+
+);
+
+
+
+
+const result =
+await response.json();
+
+
+
+
+
+// DISPLAY REAL AI RESPONSE
+
+
+healthSummary.innerHTML=`
+
+
+<h3>
+🤖 Medora AI Health Report
+</h3>
+
+
+<hr>
+
+
+<p>
+
+${result.summary.replace(/\n/g,"<br>")}
+
+</p>
+
+
+
+`;
+
+
+
+alert(
+"Prescription saved successfully!"
+);
+
+
+
+}
+
+
+
+catch(error){
+
+
+console.error(error);
+
+
+
+healthSummary.innerHTML=`
+
+<h3>
+❌ AI Connection Failed
+</h3>
+
+<p>
+Please make sure Flask server is running.
+</p>
+
+`;
+
+
+}
+
+
+
+
+});
+
+
+
+}
+
+
+
+
+
+
+
+// =====================================================
 // PDF EXPORT
-// ================================
+// =====================================================
 
 
 
-document.getElementById("pdfButton")
-.addEventListener("click",function(){
+const pdfBtn =
+document.getElementById("pdfButton");
 
 
 
-    const summary =
-    document.getElementById("healthSummary")
-    .innerText;
+if(pdfBtn){
+
+
+pdfBtn.addEventListener(
+"click",
+()=>{
+
+
+const summary =
+
+healthSummary.innerText;
 
 
 
-    const pdfWindow =
-    window.open("");
+const pdfWindow =
+window.open("");
 
 
 
-    pdfWindow.document.write(`
-
-    <html>
-
-    <head>
-
-    <title>
-    Medora Health Summary
-    </title>
-
-    </head>
+pdfWindow.document.write(`
 
 
-    <body>
+<html>
+
+<head>
+
+<title>
+Medora AI Health Summary
+</title>
 
 
-    <h1>
-    🩺 Medora AI Health Summary
-    </h1>
-
-
-    <p>
-    ${summary}
-    </p>
-
-
-    </body>
-
-
-    </html>
-
-
-    `);
+</head>
 
 
 
-    pdfWindow.print();
+<body>
+
+
+<h1>
+🩺 Medora AI Health Summary
+</h1>
+
+
+
+<p>
+
+${summary}
+
+</p>
+
+
+
+</body>
+
+
+</html>
+
+
+`);
+
+
+
+pdfWindow.print();
 
 
 
 });
+
+
+}
