@@ -1,0 +1,1722 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+    }
+
+body{
+    margin:0;
+    padding:0;
+    background:#050816;
+    overflow-x:hidden;
+}
+/* ==========================
+        NAVBAR
+========================== */
+
+header{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    height:90px;
+
+    padding:0 6%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    z-index:999;
+
+    background:rgba(5,8,22,.12);
+
+    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(12px);
+
+    border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+/* ==========================
+        LOGO
+========================== */
+
+/* Logo Container */
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+    margin-right: 20px;
+    margin-left: -120px;
+}
+
+/* Brain Logo */
+.logo-img{
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    flex-shrink: 0;
+    filter:
+        drop-shadow(0 0 10px rgba(118,79,255,.45))
+        drop-shadow(0 0 20px rgba(0,195,255,.25));
+}
+
+/* Text beside logo */
+.logo-text{
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+    margin-left: -60px;
+}
+
+.logo-text h2{
+    color:#fff;
+    font-size:36px;
+    font-weight:700;
+    margin:0;
+}
+
+.logo-text h2 span{
+    color:#8d5cff;
+}
+
+.logo-text p{
+    margin-top:6px;
+    font-size:16px;
+    color:#bcbccc;
+    font-weight:400;
+}
+/* ==========================
+        NAVIGATION
+========================== */
+
+.navigation{
+
+    display:flex;
+    align-items:center;
+
+    gap:48px;
+}
+
+.navigation a{
+
+    position:relative;
+
+    color:#ffffff;
+
+    text-decoration:none;
+
+    font-size:18px;
+
+    font-weight:500;
+
+    transition:.35s;
+}
+
+.nav-links a:hover{
+
+    color:#6DDCFF;
+
+    text-shadow:
+        0 0 10px rgba(109,220,255,.45);
+
+}
+.navigation a:hover{
+
+    color:#4da6ff;
+}
+
+/* Underline */
+
+.navigation a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:-8px;
+
+    width:100%;
+    height:2px;
+
+    background:linear-gradient(90deg,#b336ff,#4da6ff);
+
+    transform:scaleX(0);
+
+    transform-origin:right;
+
+    transition:.35s;
+}
+
+.navigation a:hover::after{
+
+    transform:scaleX(1);
+
+    transform-origin:left;
+}
+
+/* Active Link */
+
+
+
+/* ==========================
+      GET STARTED BUTTON
+========================== */
+
+.btnlogin-popup{
+
+    width:185px;
+
+    height:58px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    gap:12px;
+
+    border:none;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    color:#fff;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    background:linear-gradient(
+        90deg,
+        #9a2eff,
+        #7b4dff,
+        #4da6ff
+    );
+
+    box-shadow:
+        0 10px 28px rgba(95,84,255,.35);
+
+    transition:.35s;
+}
+
+.btnlogin-popup i{
+
+    transition:.35s;
+}
+
+.btnlogin-popup:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 18px 38px rgba(95,84,255,.45);
+}
+
+.btnlogin-popup:hover i{
+
+    transform:translateX(6px);
+}
+.hero{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 140px 6% 80px;
+
+    overflow: hidden;
+}
+
+.hero-image{
+    position:absolute;
+    top:0;
+    right:0;
+
+    width:55%;
+    height:100%;
+
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+
+    pointer-events:none;
+    z-index:1;
+}
+.hero-image{
+
+    animation:
+        heroFloat 7s ease-in-out infinite;
+}
+
+@keyframes heroFloat{
+
+    0%,100%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
+}
+.hero-image img{
+    animation: heroDNA 10s ease-in-out infinite;
+    transform-origin:center;
+}
+
+@keyframes heroDNA{
+
+    0%,100%{
+        transform:translateY(0px) rotate(1deg) scale(1);
+    }
+
+    25%{
+        transform:translateY(-8px) rotate(2deg) scale(1.01);
+    }
+
+    50%{
+        transform:translateY(-14px) rotate(3deg) scale(1.02);
+    }
+
+    75%{
+        transform:translateY(-8px) rotate(-1deg) scale(1.01);
+    }
+}
+
+/* Main illustration */
+.hero-bg{
+    position:absolute;
+
+    right:-3%;
+    top:50%;
+
+    width:900px;
+    max-width:none;
+    height:auto;
+
+    transform:translateY(-50%);
+
+    object-fit:contain;
+
+    opacity:.95;
+
+    z-index:1;
+}
+
+/* Floating overlays */
+.floating-dna,
+.neuron{
+    position:absolute;
+    z-index:4;
+    height:auto;
+}
+
+.floating-dna{
+    position:absolute;
+    width:130px;
+    opacity:.85;
+
+    z-index:4;
+
+    filter:
+        drop-shadow(0 0 20px #3eb8ff)
+        drop-shadow(0 0 45px #7b5cff);
+
+    animation:floatDNA linear infinite;
+    will-change:transform;
+}
+
+@keyframes floatDNA{
+
+    0%{
+        transform:translateY(0px) rotate(-5deg);
+    }
+
+    25%{
+        transform:translateY(-25px) translateX(12px) rotate(3deg);
+    }
+
+    50%{
+        transform:translateY(15px) translateX(-10px) rotate(-3deg);
+    }
+
+    75%{
+        transform:translateY(-18px) translateX(8px) rotate(2deg);
+    }
+
+    100%{
+        transform:translateY(0px) rotate(-5deg);
+    }
+
+}
+
+.neuron{
+
+    width:110px;
+
+    opacity:.95;
+
+    filter:
+        drop-shadow(0 0 25px #58d2ff)
+        drop-shadow(0 0 50px #7d58ff);
+
+}
+
+.dna1{
+    top:40%;
+    left:12%;
+    animation-duration:22s;
+    animation-delay: -4s;
+}
+
+.dna2{
+    top:28%;
+    left:22%;
+    width:70px;
+    animation-duration:28s;
+    animation-delay: -6s;
+}
+
+.dna3{
+    top:65%;
+    left:20%;
+    width:75px;
+    animation-duration:32s;
+    animation-delay: -6s;
+}
+
+.dna4{
+    top:18%;
+    left:87%;
+    width:60px;
+    animation-duration:26s;
+    animation-delay: -6s;
+}
+
+.dna5{
+    bottom:28%;
+    left:76%;
+    width:80px;
+    animation-duration:30s;
+    animation-delay: -6s;
+}
+
+.dna6{
+    bottom:5%;
+    left:60%;
+    width:65px;
+    animation-duration:24s;
+    animation-delay: -5s;
+}
+
+
+/* ===========================================
+   DNA FLOAT
+=========================================== */
+
+@keyframes floatDNA{
+
+    0%{
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    25%{
+        transform:
+            translateY(-18px)
+            rotate(2deg);
+    }
+
+    50%{
+        transform:
+            translateY(10px)
+            rotate(-2deg);
+    }
+
+    75%{
+        transform:
+            translateY(-12px)
+            rotate(1deg);
+    }
+
+    100%{
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+}
+
+.neuron{
+    width:85px;
+    opacity:.9;
+
+    filter:
+        drop-shadow(0 0 18px #59d4ff)
+        drop-shadow(0 0 45px #7d58ff);
+
+    animation:moveNeuron 18s ease-in-out infinite;
+}
+
+.neuron1{
+    top:12%;
+    left: 18%;
+    animation-delay: -2s;
+}
+
+.neuron2{
+    bottom:12%;
+    left: 30%;
+    animation-delay: -6s;
+}
+
+.neuron3{
+    top:48%;
+    right:36%;
+    width:65px;
+}
+
+.neuron4{
+    bottom:30%;
+    right:26%;
+    width:60px;
+}
+
+@keyframes moveNeuron{
+
+    0%{
+        transform:translate(0,0) scale(1);
+    }
+
+    20%{
+        transform:translate(-10px,-18px) scale(1.06);
+    }
+
+    40%{
+        transform:translate(10px,12px) scale(.96);
+    }
+
+    60%{
+        transform:translate(-8px,18px) scale(1.04);
+    }
+
+    80%{
+        transform:translate(12px,-12px) scale(.98);
+    }
+
+    100%{
+        transform:translate(0,0) scale(1);
+    }
+
+}
+
+.floating-dna, .neuron{
+    object-fit:contain;
+    filter:
+        drop-shadow(0 0 25px #57d0ff)
+        drop-shadow(0 0 55px #7d5dff)
+        brightness(1.25);
+}
+.hero::before{
+    content:"";
+    position:absolute;
+
+    right:-150px;
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:700px;
+    height:700px;
+
+    background:radial-gradient(
+        circle,
+        rgba(80,180,255,.18),
+        rgba(120,70,255,.12),
+        transparent 70%
+    );
+
+    filter:blur(80px);
+
+    z-index:0;
+    pointer-events:none;
+}
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:-1px;
+
+    width:100%;
+    height:220px;
+
+    background:linear-gradient(
+        to bottom,
+        rgba(5,8,22,0),
+        rgba(5,8,22,.25),
+        rgba(5,8,22,.55),
+        rgba(5,8,22,.9)
+    );
+
+    z-index:4;
+
+    pointer-events:none;
+}
+.content{
+    position: relative;
+    z-index: 5;
+
+}
+
+.gradient-text{
+    background: linear-gradient(
+        90deg,
+        #3658D4 0%,
+        #5B42D6 50%,
+        #7A2FD4 100%
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow: none;
+}
+
+/* ===========================
+   HERO TOP BADGE
+=========================== */
+
+.hero-tag{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+
+    padding:10px 18px;
+    margin-bottom:26px;
+
+    border:1px solid rgba(92, 140, 255, 0.18);
+    border-radius:999px;
+
+    background:rgba(14,20,42,.55);
+    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);
+
+    font-size:13px;
+    font-weight:500;
+
+    letter-spacing:.12em;
+    text-transform:uppercase;
+
+    background-image:linear-gradient(
+        92deg,
+        #4D73F2 0%,
+        #6D7FFF 35%,
+        #63E6FF 78%,
+        #9A84FF 100%
+    );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,.03),
+        0 0 18px rgba(35,70,180,.08);
+}
+
+/* Small glowing dot */
+
+.hero-tag i{
+    font-size:14px;
+
+    background:linear-gradient(
+        135deg,
+        #58E3FF,
+        #5A8DFF,
+        #9C6DFF
+    );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    filter:drop-shadow(0 0 6px rgba(88,227,255,.35));
+}
+.hero .content{
+    max-width: 600px;
+    color: #fff;
+}
+
+.content h1{
+    font-size: 3em;
+    letter-spacing: .03em;
+     animation:
+        fadeUp .8s ease;
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+.content p{
+    
+    margin: 20px 0 40px;
+    font-size: 1.1em;
+}
+
+.content > a:not(.btn){
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 30px;
+    background: #fff;
+    color: #000;
+    text-decoration: none;
+    font-size: 1.1em;
+    border-radius: 20px;
+    transition: .5s;
+}
+
+
+
+/* ============================
+   Explore Project Button
+============================ */
+.hero-buttons{
+    display:flex;
+    align-items:center;
+    gap:24px;
+    margin-top:35px;
+}
+
+.btn-primary{
+    min-width: 255px;
+    height: 60px;
+    padding: 0 28px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px;
+
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+
+    border: none;
+    border-radius: 12px;
+
+    background: linear-gradient(
+        90deg,
+        #9A2EFF 0%,
+        #7B4DFF 42%,
+        #4DA6FF 100%
+    );
+
+    box-shadow:
+        0 10px 25px rgba(107, 74, 255, 0.35),
+        inset 0 1px 1px rgba(255,255,255,0.18);
+
+    transition: all .35s ease;
+}
+
+.btn-primary:hover{
+
+    transform: translateY(-3px);
+
+    background: linear-gradient(
+        90deg,
+        #A63CFF 0%,
+        #8862FF 42%,
+        #63B4FF 100%
+    );
+
+    box-shadow:
+        0 15px 35px rgba(107,74,255,.55),
+        0 0 30px rgba(77,166,255,.30);
+}
+
+.btn-primary span{
+    color:#fff;
+}
+
+.btn-primary i{
+    font-size:20px;
+    color:#fff;
+    transition:.35s ease;
+}
+
+.btn-primary:hover i{
+    transform:translateX(5px);
+}
+
+/* ============================
+   Explore Project Button
+============================ */
+
+.btn-primary{
+    min-width: 255px;
+    height: 60px;
+    padding: 0 28px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px;
+
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+
+    border: none;
+    border-radius: 12px;
+
+    background: linear-gradient(
+        90deg,
+        #9A2EFF 0%,
+        #7B4DFF 42%,
+        #4DA6FF 100%
+    );
+
+    box-shadow:
+        0 10px 25px rgba(107, 74, 255, 0.35),
+        inset 0 1px 1px rgba(255,255,255,0.18);
+
+    transition: all .35s ease;
+}
+
+.btn-primary:hover{
+
+    transform: translateY(-3px);
+
+    background: linear-gradient(
+        90deg,
+        #A63CFF 0%,
+        #8862FF 42%,
+        #63B4FF 100%
+    );
+
+    box-shadow:
+        0 15px 35px rgba(107,74,255,.55),
+        0 0 30px rgba(77,166,255,.30);
+}
+
+.btn-primary span{
+    color:#fff;
+}
+
+.btn-primary i{
+    font-size:20px;
+    color:#fff;
+    transition:.35s ease;
+}
+
+.btn-primary:hover i{
+    transform:translateX(5px);
+}
+
+.btn-secondary{
+    width:220px;
+    height:60px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 28px;
+
+    color:#fff;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:600;
+
+    background:rgba(10,16,35,.45);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    border-radius:12px;
+
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.08),
+        0 8px 24px rgba(0,0,0,.35);
+
+    transition:.35s ease;
+}
+
+.btn-secondary span{
+    color:#fff;
+}
+
+.btn-secondary:hover{
+    background:rgba(117,88,255,.18);
+
+    border-color:#8a6cff;
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 0 25px rgba(120,90,255,.35);
+}
+
+/*====================================================
+        NEUROCARE FEATURE SECTION
+====================================================*/
+
+.nc-feature-area{
+    margin-top:-40px;
+    padding:0 6% 50px;
+    position:relative;
+    z-index:10;
+}
+
+.nc-feature-wrapper{
+
+    width:100%;
+    max-width:1450px;
+
+    display:grid;
+    grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;
+
+    align-items:center;
+
+   background: linear-gradient(
+    180deg,
+    rgba(10,12,30,.30) 0%,
+    rgba(10,12,30,.50) 50%,
+    rgba(10,12,30,.70) 100%
+);
+
+   border:1px solid rgba(140,170,255,.06);
+
+    border-radius:24px;
+
+    backdrop-filter:transparent(18px);
+    -webkit-backdrop-filter:transparent(18px);
+
+    padding:35px 25px;
+
+    box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.05),
+    0 0 35px rgba(83,76,255,.10);
+    position: relative;
+    overflow: hidden;
+}
+
+.nc-feature-wrapper::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:8%;
+    right:8%;
+
+    height:2px;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(115,95,255,.45),
+        rgba(70,170,255,.35),
+        transparent
+    );
+
+    filter:blur(1px);
+
+    opacity:.8;
+}
+
+/*=========================
+        CARD
+=========================*/
+
+.nc-feature-item{
+
+    display:flex;
+    align-items:flex-start;
+
+    gap:22px;
+
+    padding:0 20px;
+
+    transition:.35s ease;
+}
+
+.nc-feature-item:hover{
+
+    transform:translateY(-6px);
+}
+.nc-feature-icon i{
+    font-size:30px;
+    color:inherit;
+    opacity:1;
+    filter:none;
+    text-shadow:none;
+}
+
+/*=========================
+        DIVIDER
+=========================*/
+
+.nc-feature-line{
+
+    width:1px;
+    height:120px;
+
+    background:rgba(255,255,255,.08);
+}
+
+/*=========================
+        ICON
+=========================*/
+
+.nc-feature-icon{
+
+    width:68px;
+    height:68px;
+
+    border-radius:18px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    flex-shrink:0;
+
+    font-size:28px;
+
+    transition:.35s ease;
+}
+
+/* Purple */
+
+.icon-purple{
+
+    color:#ba5dff;
+
+    background:rgba(139,44,245,.12);
+
+    box-shadow:
+    0 0 20px rgba(139,44,245,.18);
+}
+
+/* Violet */
+
+.icon-violet{
+
+    color:#8e63ff;
+
+    background:rgba(123,97,255,.12);
+
+    box-shadow:
+    0 0 20px rgba(123,97,255,.18);
+}
+
+/* Blue */
+
+.icon-blue{
+
+    color:#4aa9ff;
+
+    background:rgba(74,169,255,.12);
+
+    box-shadow:
+    0 0 20px rgba(74,169,255,.18);
+}
+
+/* Cyan */
+
+.icon-cyan{
+
+    color:#21e8ff;
+
+    background:rgba(33,232,255,.10);
+
+    box-shadow:
+    0 0 20px rgba(33,232,255,.18);
+}
+
+.nc-feature-item:hover .nc-feature-icon{
+
+    transform:scale(1.08);
+
+    box-shadow:0 0 28px rgba(130,110,255,.35);
+}
+
+/*=========================
+        TEXT
+=========================*/
+
+.nc-feature-info h3{
+
+    color:#ffffff;
+
+    font-size:28px;
+
+    font-weight:600;
+
+    margin-bottom:12px;
+}
+
+.nc-feature-info p{
+
+    color:#b4b8d3;
+
+    font-size:18px;
+
+    line-height:1.8;
+}
+
+/*=========================
+        RESPONSIVE
+=========================*/
+
+@media(max-width:1200px){
+
+.nc-feature-wrapper{
+
+grid-template-columns:1fr 1fr;
+
+gap:35px;
+}
+
+.nc-feature-line{
+
+display:none;
+}
+
+}
+
+@media(max-width:768px){
+
+.nc-feature-wrapper{
+
+grid-template-columns:1fr;
+
+padding:30px;
+}
+
+.nc-feature-item{
+
+padding:10px 0;
+}
+
+.nc-feature-info h3{
+
+font-size:23px;
+}
+
+.nc-feature-info p{
+
+font-size:16px;
+}
+
+}
+
+.last-section span1{
+    width:100%;
+    padding: 50px 6% 80px;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    text-align:center;
+    color:#fff;
+    letter-spacing: 0.7px;
+    margin-top: -40px;
+    font-weight: 300;
+    font-family:Arial, Helvetica, sans-serif ;
+}
+/* ================= STUDENT BUILT ================= */
+
+.student-built{
+    width:100%;
+    text-align:center;
+    padding:55px 0 70px;
+    position:relative;
+    z-index:5;
+}
+
+.student-built h2{
+    font-size:1.6rem;
+    font-weight:500;
+    color:#f4f4f4;
+    letter-spacing:.4px;
+    margin-bottom:14px;
+}
+
+.student-built p{
+    font-size:1.15rem;
+    color:rgba(255,255,255,.55);
+    font-weight:300;
+    letter-spacing:.3px;
+    margin-bottom:28px;
+}
+
+.heart-icon{
+    width:46px;
+    height:46px;
+    margin:auto;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:50%;
+
+    border:1px solid rgba(170,90,255,.25);
+
+    background:rgba(120,30,255,.06);
+
+    transition:.35s;
+}
+
+.heart-icon i{
+    color:#c84dff;
+    font-size:1.45rem;
+}
+
+.heart-icon:hover{
+    transform:translateY(-4px);
+    border-color:#b04dff;
+
+    box-shadow:
+    0 0 18px rgba(178,78,255,.45);
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width:1024px){
+
+.hero{
+    flex-direction:column;
+    text-align:center;
+    padding:140px 6% 80px;
+}
+
+.content{
+    max-width:100%;
+}
+
+.hero-image{
+    margin-top:50px;
+}
+
+.hero-image img:first-child{
+    width:480px;
+}
+
+.navigation{
+    gap:25px;
+}
+
+.nc-feature-wrapper{
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
+}
+
+.nc-feature-line{
+    display:none;
+}
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width:768px){
+
+header{
+    padding:20px 5%;
+}
+
+.navigation{
+    display:none;
+}
+
+.btnlogin-popup{
+    display:none;
+}
+
+.hero{
+    padding:130px 5% 70px;
+}
+
+.content h1{
+    font-size:52px;
+    line-height:1.1;
+}
+
+.content p{
+    font-size:17px;
+}
+
+.hero-buttons{
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.hero-image{
+    margin-top:40px;
+}
+
+.hero-image img:first-child{
+    width:360px;
+}
+
+.floating-dna{
+    width:55px;
+}
+
+.neuron{
+    width:45px;
+}
+
+.nc-feature-wrapper{
+    grid-template-columns:1fr;
+}
+
+.student-built h2{
+    font-size:38px;
+}
+
+}
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width:480px){
+
+.logo-text h2{
+    font-size:24px;
+}
+
+.hero-tag{
+    font-size:11px;
+    padding:8px 14px;
+}
+
+.content h1{
+    font-size:40px;
+}
+
+.content p{
+    font-size:16px;
+}
+
+.hero-image img:first-child{
+    width:290px;
+}
+
+.floating-dna{
+    width:45px;
+}
+
+.neuron{
+    width:35px;
+}
+
+.btn{
+    width:100%;
+    justify-content:center;
+}
+
+.student-built h2{
+    font-size:30px;
+}
+
+.student-built p{
+    font-size:16px;
+}
+
+}
+
+/* ==========================================
+   RESPONSIVE FIXES
+   Paste at the END of style.css
+========================================== */
+
+
+/* ---------- Large Laptop ---------- */
+
+@media (max-width:1400px){
+
+header{
+    padding:0 4%;
+}
+
+.logo{
+    margin-left:0;
+}
+
+.logo-img{
+    width:130px;
+    height:130px;
+}
+
+.logo-text{
+    margin-left:-35px;
+}
+
+.logo-text h2{
+    font-size:28px;
+}
+
+.navigation{
+    gap:30px;
+}
+
+.hero-bg{
+    width:720px;
+    right:-8%;
+}
+
+.content h1{
+    font-size:2.8rem;
+}
+
+}
+
+
+/* ---------- Laptop ---------- */
+
+@media (max-width:1200px){
+
+.hero{
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    text-align:center;
+
+    padding-top:160px;
+
+}
+
+.content{
+
+    max-width:100%;
+
+}
+
+.hero-buttons{
+
+    justify-content:center;
+
+}
+
+.hero-image{
+
+    position:relative;
+
+    width:100%;
+
+    height:auto;
+
+    justify-content:center;
+
+    margin-top:50px;
+
+}
+
+.hero-bg{
+
+    position:relative;
+
+    width:90%;
+
+    right:auto;
+
+    top:auto;
+
+    transform:none;
+
+}
+
+}
+
+
+/* ---------- Tablet ---------- */
+
+@media (max-width:992px){
+
+header{
+
+    height:80px;
+
+}
+
+.logo-img{
+
+    width:100px;
+
+    height:100px;
+
+}
+
+.logo-text{
+
+    margin-left:-20px;
+
+}
+
+.logo-text h2{
+
+    font-size:24px;
+
+}
+
+.logo-text p{
+
+    font-size:13px;
+
+}
+
+.navigation{
+
+    gap:20px;
+
+}
+
+.navigation a{
+
+    font-size:16px;
+
+}
+
+.btnlogin-popup{
+
+    width:150px;
+
+    height:48px;
+
+    font-size:15px;
+
+}
+
+.hero{
+
+    padding:130px 5% 60px;
+
+}
+
+.content h1{
+
+    font-size:2.5rem;
+
+}
+
+.content p{
+
+    font-size:17px;
+
+}
+
+.hero-buttons{
+
+    flex-wrap:wrap;
+
+}
+
+.hero-bg{
+
+    width:95%;
+
+}
+
+}
+
+
+/* ---------- Mobile ---------- */
+
+@media (max-width:768px){
+
+header{
+
+    padding:0 20px;
+
+}
+
+.navigation{
+
+    display:none;
+
+}
+
+.btnlogin-popup{
+
+    display:none;
+
+}
+
+.logo{
+
+    margin-left:0;
+
+}
+
+.logo-img{
+
+    width:80px;
+
+    height:80px;
+
+}
+
+.logo-text{
+
+    margin-left:-12px;
+
+}
+
+.logo-text h2{
+
+    font-size:20px;
+
+}
+
+.logo-text p{
+
+    font-size:11px;
+
+}
+
+.hero{
+
+    padding:120px 20px 60px;
+
+}
+
+.content h1{
+
+    font-size:2rem;
+
+}
+
+.content p{
+
+    font-size:15px;
+
+}
+
+.hero-buttons{
+
+    flex-direction:column;
+
+    width:100%;
+
+}
+
+.btn-primary,
+.btn-secondary{
+
+    width:100%;
+
+    max-width:320px;
+
+}
+
+.hero-image{
+
+    margin-top:30px;
+
+}
+
+.hero-bg{
+
+    width:100%;
+
+}
+
+.floating-dna,
+.neuron{
+
+    display:none;
+
+}
+
+}
+
+
+/* ---------- Small Mobile ---------- */
+
+@media (max-width:480px){
+
+.content h1{
+
+    font-size:1.7rem;
+
+}
+
+.content p{
+
+    font-size:14px;
+
+}
+
+.hero-tag{
+
+    font-size:10px;
+
+}
+
+.btn-primary,
+.btn-secondary{
+
+    height:54px;
+
+    font-size:15px;
+
+}
+
+.student-built h2{
+
+    font-size:24px;
+
+}
+
+.student-built p{
+
+    font-size:14px;
+
+}
+
+}
