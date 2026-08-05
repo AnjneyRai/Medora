@@ -1,119 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medora - Reminder</title>
 
-<title>Medora | Medicine Reminder</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="css/reminder.css">
-
+<link rel="stylesheet" href="reminder.css">
 </head>
-
 
 <body>
 
-
 <div class="container">
 
+<header class="topbar">
 
-<!-- HEADER -->
+<a href="dashboard.html" class="backBtn">
+← Dashboard
+</a>
 
-<header class="header">
+<div class="logo">
 
-    <div class="brand">
+<div class="logoIcon">💊</div>
 
-        <h1>💊 Medora</h1>
+<div>
+<h1>Medora</h1>
+<p>Smart Medicine Schedule</p>
+</div>
 
-        <p>Smart Medicine Schedule</p>
-
-    </div>
-
-
-    <button class="back-btn" onclick="history.back()">
-        ← Dashboard
-    </button>
-
+</div>
 
 </header>
 
+<section class="hero">
 
+<div class="heroLeft">
 
+<div class="bell">🔔</div>
 
-<!-- HERO SECTION -->
+<div>
 
-<section class="hero panel">
+<h2>Stay Consistent With Your Medicines</h2>
 
+<p>Manage your daily medication schedule easily.</p>
 
-    <div>
+</div>
 
-        <h2>
-            Stay Consistent With Your Medicines
-        </h2>
+</div>
 
-        <p>
-            Manage your daily medication schedule easily.
-        </p>
+<div class="nextDose">
 
-    </div>
+<h4>Next Dose</h4>
 
+<h1 id="nextTime">08:00 AM</h1>
 
+<p id="nextMedicine">Paracetamol 500mg</p>
 
-    <div class="next-dose">
-
-        <span>Next Dose</span>
-
-        <h1>08:00 AM</h1>
-
-        <p>Paracetamol 500mg</p>
-
-    </div>
-
-
+</div>
 
 </section>
 
+<section class="card">
 
+<h2>📅 Today's Schedule</h2>
 
+<div id="todayList">
 
+<div class="schedule">
 
-
-<!-- MAIN GRID -->
-
-
-<div class="main-grid">
-
-
-
-
-
-<!-- TODAY'S MEDICINES -->
-
-
-<section class="panel schedule">
-
-
-<div class="section-title">
-
-<h2>Today's Schedule</h2>
-
+<div class="time blue">
+08:00<br>AM
 </div>
 
-
-
-<div class="medicine-card">
-
-
-<div class="time">
-
-08:00 AM
-
-</div>
-
-
-<div class="medicine-info">
+<div class="details">
 
 <h3>Paracetamol 500mg</h3>
 
@@ -121,33 +83,19 @@
 
 </div>
 
-
-
-<button class="pending">
-
+<span class="pending">
 Pending
-
-</button>
-
+</span>
 
 </div>
 
+<div class="schedule">
 
-
-
-
-
-<div class="medicine-card">
-
-
-<div class="time">
-
-02:00 PM
-
+<div class="time orange">
+02:00<br>PM
 </div>
 
-
-<div class="medicine-info">
+<div class="details">
 
 <h3>Vitamin D3</h3>
 
@@ -155,34 +103,19 @@ Pending
 
 </div>
 
-
-
-<button class="pending">
-
+<span class="pending">
 Pending
-
-</button>
-
+</span>
 
 </div>
 
+<div class="schedule">
 
-
-
-
-
-
-<div class="medicine-card">
-
-
-<div class="time">
-
-08:00 PM
-
+<div class="time green">
+08:00<br>PM
 </div>
 
-
-<div class="medicine-info">
+<div class="details">
 
 <h3>Cetirizine</h3>
 
@@ -190,126 +123,41 @@ Pending
 
 </div>
 
-
-
-<button class="taken">
-
+<span class="taken">
 Taken
-
-</button>
-
+</span>
 
 </div>
 
-
+</div>
 
 </section>
 
+<section class="card">
 
+<h2>➕ Add Reminder</h2>
 
+<input id="medicine" type="text" placeholder="Medicine Name">
 
+<div class="row">
 
+<input id="dosage" type="text" placeholder="500 mg / 1 Tablet">
 
-
-
-<!-- ADD REMINDER -->
-
-
-<section class="panel add-box">
-
-
-<div class="section-title">
-
-<h2>Add Reminder</h2>
+<input id="time" type="time">
 
 </div>
 
-
-
-<form id="reminderForm">
-
-
-
-<div class="input-group">
-
-<label>
-Medicine Name
-</label>
-
-<input 
-type="text"
-id="medicineName"
-placeholder="Enter medicine name">
-
-</div>
-
-
-
-
-
-<div class="input-group">
-
-<label>
-Dosage
-</label>
-
-<input 
-type="text"
-id="dosage"
-placeholder="500 mg / 1 Tablet">
-
-</div>
-
-
-
-
-
-<div class="input-group">
-
-<label>
-Time
-</label>
-
-<input 
-type="time"
-id="time">
-
-</div>
-
-
-
-
-
-<div class="input-group">
-
-<label>
-Frequency
-</label>
-
+<div class="row">
 
 <select id="frequency">
 
 <option>Daily</option>
 
-<option>Once</option>
-
 <option>Weekly</option>
 
+<option>Monthly</option>
+
 </select>
-
-
-</div>
-
-
-
-
-
-<div class="input-group">
-
-<label>
-Food Instruction
-</label>
-
 
 <select id="food">
 
@@ -317,94 +165,47 @@ Food Instruction
 
 <option>Before Food</option>
 
-<option>Any Time</option>
-
+<option>With Food</option>
 
 </select>
 
-
 </div>
 
-
-
-
-<button class="save-btn">
-
+<button id="addReminder">
 + Add Reminder
-
 </button>
-
-
-
-</form>
-
 
 </section>
 
+<section class="card">
 
-</div>
+<h2>📅 Upcoming Medicines</h2>
 
+<div id="reminderList">
 
-
-
-
-
-
-
-<!-- UPCOMING -->
-
-
-<section class="panel upcoming">
-
-
-<div class="section-title">
-
-<h2>Upcoming Medicines</h2>
-
-</div>
-
-
-
-<div class="upcoming-card">
-
+<div class="upcoming">
 
 <div>
 
-<h3>
-Tomorrow
-</h3>
+<h3>Tomorrow</h3>
 
-
-<p>
-09:00 AM • Amoxicillin
-</p>
-
+<p>09:00 AM • Amoxicillin</p>
 
 </div>
 
-
-<span>
+<span class="badge">
 Scheduled
 </span>
 
-
 </div>
 
-
+</div>
 
 </section>
 
-
-
-
-
 </div>
 
-
-
-<script src="js/reminder.js"></script>
-
+<script src="script.js"></script>
 
 </body>
-
 </html>
