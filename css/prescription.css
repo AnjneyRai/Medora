@@ -1,228 +1,214 @@
-/* ================================
-   MEDORA PRESCRIPTION PAGE CSS
-   ================================ */
+/* ==========================================
+   MEDORA PRESCRIPTION PAGE
+   DARK AI THEME
+   ========================================== */
 
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Inter", "Segoe UI", sans-serif;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Inter","Segoe UI",sans-serif;
 }
 
+body{
 
-body {
+    background:
+    radial-gradient(circle at top right,#4338ca 0%,transparent 30%),
+    radial-gradient(circle at bottom left,#2563eb 0%,transparent 35%),
+    linear-gradient(135deg,#04040f,#090920,#050510);
 
-    background: linear-gradient(
-        135deg,
-        #eef8ff,
-        #f8fcff
-    );
-
-    color: #1e293b;
-    min-height: 100vh;
-}
-
-
-/* MAIN CONTAINER */
-
-.container {
-
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-    padding: 30px 0 50px;
-
+    color:#fff;
+    min-height:100vh;
 }
 
 
 
-/* ================================
-        HEADER
-================================ */
+/* ===========================
+        CONTAINER
+=========================== */
 
+.container{
 
-.header {
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    background: white;
-
-    padding: 22px 30px;
-
-    border-radius: 22px;
-
-    box-shadow:
-    0 10px 30px rgba(0,0,0,0.08);
-
-    margin-bottom: 35px;
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    padding:40px 0 60px;
 
 }
 
 
 
-.brand h1 {
-
-    font-size: 32px;
-
-    color: #0284c7;
-
-    font-weight: 700;
-
-}
-
-
-
-.brand p {
-
-    margin-top: 5px;
-
-    color: #64748b;
-
-    font-size: 15px;
-
-}
-
-
-
-
-.dashboard-btn {
-
-    background: #e0f2fe;
-
-    color: #0369a1;
-
-    border: none;
-
-    padding: 12px 22px;
-
-    border-radius: 12px;
-
-    font-size: 15px;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-
-}
-
-
-.dashboard-btn:hover {
-
-    background: #0284c7;
-
-    color: white;
-
-}
-
-
-
-
-
-/* ================================
-        PAGE TITLE
-================================ */
-
-
-.page-title {
-
-    text-align: center;
-
-    margin-bottom: 35px;
-
-}
-
-
-.page-title h2 {
-
-    font-size: 34px;
-
-    color: #0f172a;
-
-}
-
-
-.page-title p {
-
-    margin-top: 10px;
-
-    color: #64748b;
-
-}
-
-
-
-
-
-/* ================================
-        COMMON CARD
-================================ */
-
-
-.card {
-
-    background: white;
-
-    padding: 28px;
-
-    border-radius: 22px;
-
-    margin-bottom: 28px;
-
-
-    box-shadow:
-
-    0 8px 25px rgba(0,0,0,0.07);
-
-}
-
-
-
-.card h3 {
-
-    font-size: 21px;
-
-    margin-bottom: 22px;
-
-    color: #0f172a;
-
-}
-
-
-
-
-
-/* ================================
-        FORM DESIGN
-================================ */
-
-
-.form-grid {
-
-    display: grid;
-
-    grid-template-columns:
-    repeat(2,1fr);
-
-    gap: 22px;
-
-}
-
-
-
-.field {
+/* ===========================
+          HEADER
+=========================== */
+
+.header{
 
     display:flex;
+    justify-content:space-between;
+    align-items:center;
 
+    padding:22px 30px;
+
+    border-radius:22px;
+
+    background:rgba(18,22,45,.72);
+
+    border:1px solid rgba(96,165,250,.18);
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:
+    0 0 30px rgba(59,130,246,.12);
+
+    margin-bottom:35px;
+
+}
+
+
+
+.brand h1{
+
+    color:#7dd3fc;
+    font-size:32px;
+    font-weight:700;
+
+}
+
+
+
+.brand p{
+
+    color:#94a3b8;
+    margin-top:6px;
+
+}
+
+
+
+.dashboard-btn{
+
+    border:none;
+
+    padding:12px 24px;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    color:white;
+
+    background:
+    linear-gradient(90deg,#7c3aed,#3b82f6);
+
+    transition:.35s;
+
+}
+
+
+
+.dashboard-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 0 20px rgba(99,102,241,.6);
+
+}
+
+
+
+/* ===========================
+      PAGE TITLE
+=========================== */
+
+.page-title{
+
+    text-align:center;
+    margin-bottom:40px;
+
+}
+
+.page-title h2{
+
+    font-size:38px;
+
+    color:white;
+
+}
+
+.page-title p{
+
+    color:#94a3b8;
+    margin-top:10px;
+
+}
+
+
+
+/* ===========================
+      COMMON CARD
+=========================== */
+
+.card{
+
+    background:rgba(18,22,45,.72);
+
+    border-radius:24px;
+
+    padding:28px;
+
+    margin-bottom:30px;
+
+    border:1px solid rgba(59,130,246,.18);
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:
+    0 0 25px rgba(59,130,246,.08);
+
+}
+
+
+
+.card h3{
+
+    color:#7dd3fc;
+
+    font-size:21px;
+
+    margin-bottom:22px;
+
+}
+
+
+
+/* ===========================
+       FORM GRID
+=========================== */
+
+.form-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:22px;
+
+}
+
+.field{
+
+    display:flex;
     flex-direction:column;
 
 }
 
+.field label{
 
-
-.field label {
+    color:#cbd5e1;
 
     font-size:14px;
 
@@ -230,51 +216,43 @@ body {
 
     font-weight:600;
 
-    color:#475569;
-
 }
 
+.field input{
 
+    background:#111827;
 
-.field input {
+    color:white;
 
+    border:1px solid rgba(59,130,246,.25);
 
-    padding:13px 15px;
+    border-radius:14px;
 
-    border-radius:12px;
-
-    border:1px solid #cbd5e1;
+    padding:14px;
 
     outline:none;
-
-    font-size:15px;
 
     transition:.3s;
 
 }
 
+.field input:focus{
 
-
-.field input:focus {
-
-
-    border-color:#0284c7;
+    border-color:#60a5fa;
 
     box-shadow:
-    0 0 0 3px rgba(2,132,199,0.15);
+    0 0 0 3px rgba(59,130,246,.18),
+    0 0 18px rgba(96,165,250,.35);
 
 }
 
 
 
+/* ===========================
+      MEDICINE SECTION
+=========================== */
 
-
-/* ================================
-        MEDICINE SECTION
-================================ */
-
-
-.medicine-heading {
+.medicine-heading{
 
     display:flex;
 
@@ -288,60 +266,57 @@ body {
 
 
 
-.add-btn {
-
-
-    background:#0ea5e9;
-
-    color:white;
+.add-btn{
 
     border:none;
 
-    padding:12px 18px;
+    padding:12px 20px;
 
-    border-radius:12px;
+    border-radius:14px;
 
     cursor:pointer;
 
+    color:white;
+
     font-weight:600;
+
+    background:
+    linear-gradient(90deg,#7c3aed,#3b82f6);
 
     transition:.3s;
 
 }
 
+.add-btn:hover{
 
+    transform:translateY(-3px);
 
-.add-btn:hover {
-
-    background:#0369a1;
+    box-shadow:
+    0 0 18px rgba(99,102,241,.6);
 
 }
 
 
 
+.medicine-card{
 
-
-.medicine-card {
-
-
-    background:#f8fafc;
+    background:#0f172a;
 
     border-radius:18px;
 
     padding:22px;
 
-    border:1px solid #e2e8f0;
+    border:1px solid rgba(59,130,246,.18);
 
 }
 
 
 
-.timing {
-
+.timing{
 
     display:flex;
 
-    gap:25px;
+    gap:20px;
 
     margin-top:20px;
 
@@ -349,68 +324,84 @@ body {
 
 
 
-.timing label {
+.timing label{
 
-    background:white;
+    background:#111827;
 
-    padding:10px 18px;
+    color:white;
 
     border-radius:12px;
 
+    border:1px solid rgba(59,130,246,.2);
+
+    padding:10px 18px;
+
     cursor:pointer;
 
-    border:1px solid #e2e8f0;
+    transition:.3s;
 
 }
 
 
 
+.timing label:hover{
+
+    background:#172554;
+
+}
 
 
-/* ================================
-        AI FEATURES
-================================ */
 
+/* ===========================
+      AI FEATURE CARDS
+=========================== */
 
-.ai-grid {
-
+.ai-grid{
 
     display:grid;
 
-    grid-template-columns:
-    repeat(3,1fr);
+    grid-template-columns:repeat(3,1fr);
 
     gap:22px;
 
-    margin-bottom:28px;
+    margin-bottom:30px;
 
 }
 
 
 
-.ai-card {
+.ai-card{
 
-
-    background:white;
+    background:rgba(18,22,45,.72);
 
     padding:25px;
 
-    border-radius:20px;
+    border-radius:22px;
 
-    box-shadow:
+    border-left:5px solid #3b82f6;
 
-    0 8px 25px rgba(0,0,0,.07);
+    border:1px solid rgba(59,130,246,.18);
 
-    border-left:5px solid #38bdf8;
+    transition:.35s;
 
 }
 
 
 
-.ai-card h3 {
+.ai-card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 0 25px rgba(59,130,246,.22);
+
+}
 
 
-    font-size:18px;
+
+.ai-card h3{
+
+    color:#7dd3fc;
 
     margin-bottom:15px;
 
@@ -418,69 +409,54 @@ body {
 
 
 
-.ai-card p {
+.ai-card p{
 
-    color:#64748b;
+    color:#94a3b8;
 
-    line-height:1.6;
-
-}
-
-
-
-.warning {
-
-
-    border-left-color:#f59e0b;
-
-    background:#fffbeb;
+    line-height:1.8;
 
 }
 
 
 
+.warning{
+
+    border-left-color:#8b5cf6;
+
+}
 
 
-/* ================================
-        SUMMARY BOX
-================================ */
 
+/* ===========================
+       SUMMARY
+=========================== */
 
-.summary-box {
-
+.summary-box{
 
     background:
+    linear-gradient(145deg,#0f172a,#172554);
 
-    linear-gradient(
-    135deg,
-    #eff6ff,
-    #ecfeff
-    );
+    border:1px solid rgba(59,130,246,.15);
 
+    border-radius:18px;
 
-    min-height:120px;
+    min-height:130px;
 
-    padding:22px;
+    padding:24px;
 
-    border-radius:16px;
+    color:#cbd5e1;
 
-    color:#475569;
-
-    line-height:1.7;
+    line-height:1.8;
 
 }
 
 
 
+/* ===========================
+      ACTION BUTTONS
+=========================== */
 
-
-/* ================================
-        ACTION BUTTONS
-================================ */
-
-
-.actions {
-
+.actions{
 
     display:flex;
 
@@ -494,20 +470,19 @@ body {
 
 
 
-.actions button {
-
-
-    padding:15px 30px;
+.actions button{
 
     border:none;
 
-    border-radius:14px;
+    padding:15px 34px;
+
+    border-radius:15px;
 
     font-size:16px;
 
-    cursor:pointer;
-
     font-weight:600;
+
+    cursor:pointer;
 
     transition:.3s;
 
@@ -515,33 +490,10 @@ body {
 
 
 
+.save-btn{
 
-.save-btn {
-
-
-    background:#22c55e;
-
-    color:white;
-
-}
-
-
-
-.save-btn:hover {
-
-
-    background:#15803d;
-
-}
-
-
-
-
-
-.pdf-btn {
-
-
-    background:#2563eb;
+    background:
+    linear-gradient(90deg,#2563eb,#7c3aed);
 
     color:white;
 
@@ -549,49 +501,88 @@ body {
 
 
 
-.pdf-btn:hover {
+.save-btn:hover{
 
+    transform:translateY(-3px);
 
-    background:#1d4ed8;
+    box-shadow:
+    0 0 20px rgba(99,102,241,.5);
 
 }
 
 
 
+.pdf-btn{
+
+    background:
+    linear-gradient(90deg,#4f46e5,#3b82f6);
+
+    color:white;
+
+}
 
 
-/* ================================
-        RESPONSIVE DESIGN
-================================ */
 
+.pdf-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 0 20px rgba(59,130,246,.55);
+
+}
+
+
+
+/* ===========================
+      SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#090914;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#3b82f6;
+
+    border-radius:20px;
+
+}
+
+
+
+/* ===========================
+      RESPONSIVE
+=========================== */
 
 @media(max-width:900px){
 
-
-    .ai-grid {
-
-        grid-template-columns:1fr;
-
-    }
-
-
-    .form-grid {
+    .form-grid{
 
         grid-template-columns:1fr;
 
     }
 
+    .ai-grid{
+
+        grid-template-columns:1fr;
+
+    }
 
 }
 
-
-
-
 @media(max-width:600px){
 
-
-    .header {
-
+    .header{
 
         flex-direction:column;
 
@@ -601,10 +592,7 @@ body {
 
     }
 
-
-
-    .medicine-heading {
-
+    .medicine-heading{
 
         flex-direction:column;
 
@@ -612,14 +600,10 @@ body {
 
     }
 
-
-
-    .actions {
-
+    .actions{
 
         flex-direction:column;
 
     }
-
 
 }
