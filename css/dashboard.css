@@ -1,3 +1,34 @@
+/* ==========================
+   MEDORA DESIGN SYSTEM
+========================== */
+
+:root{
+
+    --primary:#2563EB;
+    --primary-dark:#1D4ED8;
+
+    --success:#22C55E;
+    --warning:#F59E0B;
+    --danger:#EF4444;
+
+    --bg:#F5F8FC;
+
+    --card:#FFFFFF;
+
+    --text:#1E293B;
+
+    --text-light:#64748B;
+
+    --border:#E2E8F0;
+
+    --shadow:
+    0 10px 30px rgba(15,23,42,.08);
+
+    --radius:18px;
+
+    --transition:.25s ease;
+}
+
 /* ===================================================
                     MEDORA DASHBOARD
 =================================================== */
@@ -11,11 +42,13 @@ font-family:'Poppins',sans-serif;
 
 body{
 
-background:#eef5ff;
-background-image:url("../assets/images/background.png");
-background-size:cover;
-background-position:center;
-background-attachment:fixed;
+    margin:0;
+
+    background:var(--bg);
+
+    font-family:'Poppins',sans-serif;
+
+    color:var(--text);
 
 }
 
@@ -31,110 +64,162 @@ min-height:100vh;
 =========================================== */
 
 .sidebar{
+    width:280px;
+    min-height:100vh;
 
-width:270px;
+    background:linear-gradient(180deg,#0B2E8F 0%,#081F63 45%,#05153F 100%);
 
-background:linear-gradient(180deg,#072d85,#03173d);
+    padding:30px 20px;
 
-padding:32px 25px;
+    display:flex;
+    flex-direction:column;
 
-display:flex;
-flex-direction:column;
+    color:#fff;
 
-color:white;
-
-box-shadow:10px 0 35px rgba(0,0,0,.18);
-
+    box-shadow:8px 0 30px rgba(0,0,0,.18);
 }
 
+/* ---------------- Logo ---------------- */
+
 .logo{
-
-text-align:center;
-
-margin-bottom:45px;
-
+    text-align:center;
+    margin-bottom:45px;
 }
 
 .logo-icon{
-
-font-size:55px;
-
-margin-bottom:12px;
-
+    font-size:54px;
+    color:#7CB8FF;
+    margin-bottom:12px;
 }
 
 .logo h1{
-
-font-size:34px;
-
-letter-spacing:2px;
-
-font-weight:700;
-
+    font-size:34px;
+    letter-spacing:2px;
+    font-weight:700;
+    color:white;
 }
 
 .logo p{
-
-margin-top:10px;
-
-opacity:.75;
-
-font-size:14px;
-
+    margin-top:8px;
+    color:#BFD4FF;
+    font-size:14px;
 }
 
+/* ---------------- Navigation ---------------- */
+
 nav{
-
-display:flex;
-flex-direction:column;
-
-gap:14px;
-
+    display:flex;
+    flex-direction:column;
+    gap:10px;
 }
 
 nav a{
+    display:flex;
+    align-items:center;
+    gap:14px;
 
-display:flex;
-align-items:center;
+    height:56px;
+    padding:0 18px;
 
-gap:15px;
+    border-radius:16px;
 
-padding:16px 18px;
+    text-decoration:none;
+    color:#D9E7FF;
 
-border-radius:16px;
+    font-size:15px;
+    font-weight:500;
 
-cursor:pointer;
+    transition:all .3s ease;
 
-font-size:16px;
-
-font-weight:500;
-
-transition:.30s;
-
+    position:relative;
 }
+
+/* Prevent purple visited links */
+
+nav a:link,
+nav a:visited{
+    color:#D9E7FF;
+    text-decoration:none;
+}
+
+/* Icons */
 
 nav a i{
-
-width:22px;
-
-text-align:center;
-
+    width:24px;
+    text-align:center;
+    font-size:18px;
+    color:inherit;
 }
+
+/* Hover */
 
 nav a:hover{
+    background:rgba(255,255,255,.10);
+    color:white;
 
-background:#2967ff;
-
-transform:translateX(6px);
-
+    transform:translateX(5px);
 }
 
-.active{
+/* Active page */
 
-background:#2967ff;
+nav a.active{
 
-box-shadow:0 12px 25px rgba(41,103,255,.35);
+    background:linear-gradient(135deg,#3B82F6,#2563EB);
 
+    color:white;
+
+    font-weight:600;
+
+    box-shadow:
+    0 12px 30px rgba(37,99,235,.35);
+}
+
+/* Active indicator */
+
+nav a.active::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-10px;
+
+    width:4px;
+    height:30px;
+
+    border-radius:10px;
+
+    background:white;
+}
+
+/* Ripple Shine */
+
+nav a::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-100%;
+
+    width:100%;
+    height:100%;
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.12),
+        transparent
+    );
+
+    transition:.6s;
+}
+
+nav a:hover::after{
+
+    left:100%;
 }
 
 /* ===========================================
@@ -475,33 +560,39 @@ gap:25px;
 
 .panel{
 
-background:white;
+    background:var(--card);
 
-border-radius:24px;
+    border-radius:18px;
 
-padding:25px;
+    padding:24px;
 
-box-shadow:0 15px 35px rgba(0,0,0,.08);
+    box-shadow:var(--shadow);
 
-transition:.3s;
+    transition:all .25s ease;
+
+    border:1px solid #EDF2F7;
 
 }
 
 .panel:hover{
 
-transform:translateY(-4px);
+transform:translateY(-3px);
+box-shadow:
+0 16px 40px rgba(15,23,42,.12);
 
 }
 
 .panel-title{
 
-font-size:24px;
+    font-size:28px;
 
-font-weight:700;
+    font-weight:700;
 
-color:#18346d;
+    color:var(--text);
 
-margin-bottom:22px;
+    margin-bottom:20px;
+
+    letter-spacing:-0.5px;
 
 }
 
@@ -910,27 +1001,139 @@ box-shadow:0 12px 25px rgba(255,255,255,.18);
 
 .health{
 
-background:linear-gradient(180deg,#f8fbff,#edf5ff);
+background:white;
+
+border-radius:22px;
+
+padding:28px;
+
+box-shadow:0 15px 35px rgba(0,0,0,.08);
 
 }
 
 .health h3{
 
-font-size:24px;
+font-size:30px;
 
-color:#163d81;
+font-weight:700;
 
-margin-bottom:16px;
+color:#183b7a;
+
+margin-bottom:25px;
+
+text-transform:uppercase;
+
+letter-spacing:.5px;
 
 }
 
-.health p{
+.health-card{
 
-line-height:1.8;
+display:flex;
 
-font-size:15px;
+align-items:center;
 
-color:#57637d;
+gap:20px;
+
+padding:20px;
+
+margin-top:20px;
+
+background:#f6f9ff;
+
+border:1px solid #dbe6ff;
+
+border-radius:20px;
+
+}
+.health-icon{
+
+width:90px;
+
+height:180px;
+
+flex-shrink:0;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+.health-icon img{
+
+width:100%;
+
+height:100%;
+
+object-fit:contain;
+
+}
+.health-content{
+
+flex:1;
+
+}
+
+.health-content h4{
+
+font: size 36px;px;
+
+margin: bottom 15px;px;
+
+color:#1d3f86;
+
+}
+
+.health-content p{
+
+font: size 22px;px;
+
+line-height:1.7;
+
+color:#4b5d7c;
+
+margin: bottom 25px;px;
+
+}
+
+.health-btn{
+
+padding:14px 36px;
+
+background:#2f66ff;
+
+color:white;
+
+border:none;
+
+border-radius:12px;
+
+font-size:18px;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.health-btn:hover{
+
+background:#1f55ea;
+
+transform:translateY(-2px);
+
+}
+
+.health-btn:hover{
+
+background:#1748d4;
+
+transform:translateY(-2px);
 
 }
 
@@ -1069,18 +1272,46 @@ box-shadow:0 22px 45px rgba(0,0,0,.12);
 }
 
 /* ===========================================
-          BUTTON RIPPLE FEEL
+                BUTTONS
 =========================================== */
 
 button{
 
-transition:.25s ease;
+    height:46px;
+
+    padding:0 24px;
+
+    background:var(--primary);
+
+    color:white;
+
+    border:none;
+
+    border-radius:12px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:all .25s ease;
+
+}
+
+button:hover{
+
+    background:var(--primary-dark);
+
+    transform:translateY(-2px);
+
+    box-shadow:0 8px 20px rgba(37,99,235,.25);
 
 }
 
 button:active{
 
-transform:scale(.97);
+    transform:scale(.97);
 
 }
 
@@ -1412,5 +1643,87 @@ letter-spacing:.4px;
 input::placeholder{
 
 color:#888;
+
+}
+
+.chat-box{
+
+height:250px;
+
+overflow-y:auto;
+
+background:#111827;
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:15px;
+
+padding:15px;
+
+margin-bottom:20px;
+
+display:flex;
+
+flex-direction:column;
+
+gap:12px;
+
+box-shadow:inset 0 0 10px rgba(0,0,0,.35);
+
+}
+
+.user-message{
+
+align-self:flex-end;
+
+background:#22c55e;
+
+color:white;
+
+padding:12px 16px;
+
+border-radius:15px 15px 5px 15px;
+
+max-width:80%;
+
+font-size:14px;
+
+box-shadow:0 4px 10px rgba(0,0,0,.25);
+
+}
+
+.ai-message{
+
+align-self:flex-start;
+
+background:#2563eb;
+
+color:white;
+
+padding:12px 16px;
+
+border-radius:15px 15px 15px 5px;
+
+max-width:80%;
+
+font-size:14px;
+
+box-shadow:0 4px 10px rgba(0,0,0,.3);
+
+} 
+
+.typing{
+
+align-self:flex-start;
+
+background:rgba(255,255,255,.2);
+
+padding:12px 16px;
+
+border-radius:15px;
+
+font-size:14px;
+
+font-style:italic;
 
 }
