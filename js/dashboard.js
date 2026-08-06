@@ -1,3 +1,10 @@
+import { db } from "./firebase-config.js";
+
+import {
+    collection,
+    getDocs
+} from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
+
 const input = document.querySelector(".ai-panel input");
 const button = document.querySelector(".ask-btn");
 const chat = document.querySelector(".chat-box");
@@ -69,3 +76,40 @@ document.querySelectorAll("nav a").forEach(link => {
     }
 
 });
+async function loadDashboard(){
+
+    const snapshot = await getDocs(collection(db,"prescriptions"));
+
+    let totalMedicines = 0;
+
+    let totalVisits = snapshot.size;
+
+    let totalDoses = 0;
+
+    snapshot.forEach(doc=>{
+
+        const data = doc.data();
+
+        totalMedicines += data.medicines.length;
+
+        data.medicines.forEach(med=>{
+
+            if(med.morning) totalDoses++;
+
+            if(med.afternoon) totalDoses++;
+
+            if(med.night) totalDoses++;
+
+        });
+
+    });
+
+    document.getElementById("medicineCount").innerText = totalMedicines;
+
+    document.getElementById("visitCount").innerText = totalVisits;
+
+    document.getElementById("doseCount").innerText = totalDoses;
+
+}
+
+loadDashboard();

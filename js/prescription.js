@@ -8,6 +8,8 @@
 // =====================================================
 // DASHBOARD BUTTON
 // =====================================================
+import { db } from "./firebase-config.js";
+import { collection, addDoc } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
 
 const dashboardBtn = document.querySelector(".dashboard-btn");
 
@@ -520,7 +522,43 @@ medicines:medicines
 };
 
 
+// SAVE TO FIRESTORE
 
+try {
+
+    await addDoc(collection(db, "prescriptions"), {
+
+        patient_name: prescriptionData.patient_name,
+
+        age: prescriptionData.age,
+
+        blood_group: prescriptionData.blood_group,
+
+        allergies: prescriptionData.allergies,
+
+        doctor: prescriptionData.doctor,
+
+        hospital: prescriptionData.hospital,
+
+        visit_date: prescriptionData.visit_date,
+
+        specialization: prescriptionData.specialization,
+
+        medicines: prescriptionData.medicines,
+
+        createdAt: new Date()
+
+    });
+
+    console.log("Prescription stored in Firestore");
+
+}
+
+catch(error){
+
+    console.error("Firestore Error:", error);
+
+}
 
 
 
@@ -697,32 +735,19 @@ pdfWindow.document.write(`
 <title>
 Medora AI Health Summary
 </title>
-
-
 </head>
-
-
-
 <body>
-
-
 <h1>
 🩺 Medora AI Health Summary
 </h1>
-
-
 
 <p>
 
 ${summary}
 
 </p>
-
-
-
 </body>
-
-
+`);
 });
 
 // Highlight current page in sidebar
@@ -738,3 +763,4 @@ document.querySelectorAll("nav a").forEach(link => {
     }
 
 });
+}

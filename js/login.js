@@ -32,7 +32,24 @@ const loginButton = document.getElementById("loginBtn");
 
 loginButton.addEventListener("click", () => {
 
-    console.log("Login button clicked!");
+    const email = emailInput.value;
+    const password = passwordInput.value;
+
+    signInWithEmailAndPassword(auth, email, password)
+
+    .then((userCredential) => {
+
+        alert("Login Successful!");
+
+        window.location.href = "dashboard.html";
+
+    })
+
+    .catch((error) => {
+
+        alert(error.message);
+
+    });
 
 });
 
