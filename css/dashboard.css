@@ -541,14 +541,13 @@ grid-template-columns:2fr 1fr;
 
 gap:28px;
 
-margin-bottom:35px;
+margin-bottom: 35px;
 
 }
 
 .left-column,
-.right-column{
-
-display:flex;
+.right-column {
+display: flex;
 flex-direction:column;
 gap:25px;
 
@@ -1726,4 +1725,8 @@ font-size:14px;
 
 font-style:italic;
 
+}
+.prescription-panel{
+    min-height: 425px;
+    text-align: left;
 }
