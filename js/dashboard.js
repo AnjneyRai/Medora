@@ -112,4 +112,117 @@ async function loadDashboard(){
 
 }
 
+async function loadReminders(){
+
+    const snapshot = await getDocs(collection(db,"prescriptions"));
+
+    let reminders = [];
+
+    snapshot.forEach(doc=>{
+
+        const data = doc.data();
+
+        data.medicines.forEach(med=>{
+
+            if(med.morning){
+
+                reminders.push({
+                    time:"🕗 08:00 AM",
+                    medicine:med.name,
+                    dose:"1 Tablet • After Breakfast"
+                });
+
+            }
+
+            if(med.afternoon){
+
+                reminders.push({
+                    time:"🕑 02:00 PM",
+                    medicine:med.name,
+                    dose:"1 Tablet • After Lunch"
+                });
+
+            }
+
+            if(med.night){
+
+                reminders.push({
+                    time:"🕗 08:00 PM",
+                    medicine:med.name,
+                    dose:"1 Tablet • Before Sleep"
+                });
+
+            }
+
+        });
+
+    });
+
+    if(reminders.length>0){
+
+        document.getElementById("reminder1").innerHTML=`
+
+            <div class="reminder-top">
+
+                <div>
+
+                    <h3>${reminders[0].time}</h3>
+
+                    <p>${reminders[0].medicine}</p>
+
+                </div>
+
+                <span class="status pending">
+
+                    Pending
+
+                </span>
+
+            </div>
+
+            <small>${reminders[0].dose}</small>
+
+        `;
+
+    }
+
+    if(reminders.length>1){
+
+        document.getElementById("reminder2").innerHTML=`
+
+            <div class="reminder-top">
+
+                <div>
+
+                    <h3>${reminders[1].time}</h3>
+
+                    <p>${reminders[1].medicine}</p>
+
+                </div>
+
+                <span class="status pending">
+
+                    Pending
+
+                </span>
+
+            </div>
+
+            <small>${reminders[1].dose}</small>
+
+        `;
+
+    }
+
+}
+
 loadDashboard();
+loadReminders();
+
+document
+.getElementById("viewAllReminders")
+.addEventListener("click",()=>{
+
+    window.location.href="reminders.html";
+
+});

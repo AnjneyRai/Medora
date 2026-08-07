@@ -1,175 +1,131 @@
+import { db } from "./firebase-config.js";
+
+import {
+    collection,
+    getDocs
+} from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
+
+const medicineList = document.getElementById("medicineList");
+const medicineCount = document.getElementById("medicineCount");
+const searchInput = document.getElementById("searchMedicine");
+const aiInsight = document.getElementById("aiInsight");
+
+let allMedicines = [];
+
 function getMedicineStatus(medicine){
 
-    let today = new Date();
-
     if(medicine.duration){
-
         return "🟢 Active";
-
     }
 
     return "🟡 Scheduled";
 
 }
 
+async function loadMedicines(){
 
+    const snapshot = await getDocs(collection(db,"prescriptions"));
+
+    allMedicines = [];
+
+    snapshot.forEach(doc=>{
+
+        const data = doc.data();
+
+        data.medicines.forEach(med=>{
+
+            allMedicines.push({
+
+                name: med.name,
+
+                strength: med.strength,
+
+                duration: med.duration,
+
+                morning: med.morning,
+
+                afternoon: med.afternoon,
+
+                night: med.night,
+
+                doctor: data.doctor,
+
+                hospital: data.hospital
+
+            });
+
+        });
+
+    });
+
+    medicineCount.innerHTML =
+        `💊 Total Medicines : <strong>${allMedicines.length}</strong>`;
+
+    aiInsight.innerHTML =
+        `You currently have <strong>${allMedicines.length}</strong> medicines stored in Medora.`;
+
+    displayMedicines(allMedicines);
+
+}
 
 function displayMedicines(list){
 
+    medicineList.innerHTML="";
 
-medicineList.innerHTML="";
+    if(list.length===0){
 
+        medicineList.innerHTML="<h3>No medicines found.</h3>";
 
-if(list.length===0){
+        return;
 
+    }
 
-medicineList.innerHTML=
-`
-<p class="empty">
-No medicines added yet.
-<br>
-Add medicines from Prescription or Reminder.
-</p>
-`;
+    list.forEach(med=>{
 
-return;
+        medicineList.innerHTML += `
+
+        <div class="medicine-card">
+
+            <h3>${med.name}</h3>
+
+            <p><b>Strength:</b> ${med.strength}</p>
+
+            <p><b>Duration:</b> ${med.duration}</p>
+
+            <p><b>Doctor:</b> ${med.doctor}</p>
+
+            <p>
+
+                🌅 ${med.morning ? "✔" : "✖"}
+
+                ☀ ${med.afternoon ? "✔" : "✖"}
+
+                🌙 ${med.night ? "✔" : "✖"}
+
+            </p>
+
+            <p>${getMedicineStatus(med)}</p>
+
+        </div>
+
+        `;
+
+    });
 
 }
 
+searchInput.addEventListener("input",()=>{
 
+    const value = searchInput.value.toLowerCase();
 
-list.forEach((med,index)=>{
+    const filtered = allMedicines.filter(med=>
 
+        med.name.toLowerCase().includes(value)
 
-let schedule = med.schedule || "Not Scheduled";
+    );
 
-
-medicineList.innerHTML += `
-
-
-<div class="medicine-card">
-
-
-<div class="medicine-header">
-
-
-<h2>
-💊 ${med.name}
-</h2>
-
-
-<span class="status">
-
-${getMedicineStatus(med)}
-
-</span>
-
-
-</div>
-
-
-
-
-
-<div class="info">
-
-
-<p>
-<strong>Strength:</strong>
-${med.strength || "Not specified"}
-</p>
-
-
-<p>
-<strong>Duration:</strong>
-${med.duration || "Not specified"}
-</p>
-
-
-<p>
-<strong>Source:</strong>
-${med.source}
-</p>
-
-
-${med.doctor ?
-
-`
-<p>
-<strong>Doctor:</strong>
-${med.doctor}
-</p>
-`
-
-:""}
-
-
-</div>
-
-
-
-
-
-
-<div class="schedule">
-
-
-<h4>
-⏰ Medicine Schedule
-</h4>
-
-
-<p>
-${schedule}
-</p>
-
-
-${med.food ?
-
-`
-<p>
-🍽 ${med.food}
-</p>
-`
-
-:""}
-
-
-
-${med.frequency ?
-
-`
-<p>
-🔁 ${med.frequency}
-</p>
-`
-
-:""}
-
-
-
-</div>
-
-
-
-
-<button 
-class="delete"
-onclick="deleteMedicine(${index})">
-
-Remove Medicine
-
-</button>
-
-
-
-</div>
-
-
-`;
-
+    displayMedicines(filtered);
 
 });
 
-
-}
+loadMedicines();

@@ -1,3 +1,10 @@
+import { db } from "./firebase-config.js";
+
+import {
+    collection,
+    getDocs
+} from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
+
 const medicine = document.getElementById("medicine");
 const dosage = document.getElementById("dosage");
 const time = document.getElementById("time");
@@ -118,4 +125,100 @@ addBtn.addEventListener("click",()=>{
 
 });
 
+async function loadReminders(){
+
+    const snapshot = await getDocs(collection(db,"prescriptions"));
+
+    let reminders = [];
+
+    snapshot.forEach(doc=>{
+
+        const data = doc.data();
+
+        data.medicines.forEach(med=>{
+
+            if(med.morning){
+
+                reminders.push({
+                    time:"08:00 AM",
+                    meal:"After Breakfast",
+                    medicine:med.name
+                });
+
+            }
+
+            if(med.afternoon){
+
+                reminders.push({
+                    time:"02:00 PM",
+                    meal:"After Lunch",
+                    medicine:med.name
+                });
+
+            }
+
+            if(med.night){
+
+                reminders.push({
+                    time:"08:00 PM",
+                    meal:"Before Sleep",
+                    medicine:med.name
+                });
+
+            }
+
+        });
+
+    });
+
+    reminders.sort((a,b)=>a.time.localeCompare(b.time));
+
+    const todayList=document.getElementById("todayList");
+
+    todayList.innerHTML="";
+
+    reminders.forEach(rem=>{
+
+        todayList.innerHTML += `
+
+        <div class="schedule">
+
+            <div class="time blue">
+
+                ${rem.time.replace(" ","<br>")}
+
+            </div>
+
+            <div class="details">
+
+                <h3>${rem.medicine}</h3>
+
+                <p>${rem.meal}</p>
+
+            </div>
+
+            <span class="pending">
+
+                Pending
+
+            </span>
+
+        </div>
+
+        `;
+
+    });
+
+    if(reminders.length>0){
+
+        document.getElementById("nextTime").innerText=
+            reminders[0].time;
+
+        document.getElementById("nextMedicine").innerText=
+            reminders[0].medicine;
+
+    }
+
+}
+loadReminders();
 displayReminders();
