@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Medora | Visit History</title>
+
+
+<link rel="stylesheet" href="css/visit-history.css">
+
+
+</head>
+
+
+<body>
+
+
+<div class="app">
+
+
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar">
+
+
+<h1>💊 Medora</h1>
+
+<p>
+AI Powered Medicine Manager
+</p>
+
+
+
+<nav>
+
+
+<a href="dashboard.html">
+Dashboard
+</a>
+
+
+<a href="prescription.html">
+Prescription
+</a>
+
+
+<a href="medicines.html">
+Medicines
+</a>
+
+
+<a class="active">
+Visit History
+</a>
+
+
+<a href="settings.html">
+Settings
+</a>
+
+
+</nav>
+
+
+</aside>
+
+
+
+
+
+<!-- MAIN CONTENT -->
+
+
+<main class="main">
+
+
+
+<header>
+
+
+<div>
+
+<h2>
+Visit History
+</h2>
+
+
+<p>
+Your complete prescription and consultation history
+</p>
+
+</div>
+
+
+
+<input
+
+type="text"
+
+id="searchHistory"
+
+placeholder="🔍 Search doctor or medicine..."
+
+>
+
+
+</header>
+
+
+
+
+
+<!-- STATISTICS -->
+
+
+<section class="stats">
+
+
+
+<div class="box">
+
+
+<h3 id="visitCount">
+0
+</h3>
+
+
+<p>
+Total Visits
+</p>
+
+
+</div>
+
+
+
+
+<div class="box">
+
+
+<h3 id="doctorCount">
+0
+</h3>
+
+
+<p>
+Doctors Consulted
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="box">
+
+
+<h3 id="medicineCount">
+0
+</h3>
+
+
+<p>
+Medicines
+</p>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+<h2 class="title">
+
+Medical Timeline
+
+</h2>
+
+
+
+
+
+<div id="historyContainer">
+
+
+<div class="loading">
+
+Loading prescription history...
+
+</div>
+
+
+</div>
+
+
+
+
+
+</main>
+
+
+
+</div>
+
+
+
+
+
+<script type="module" src="js/visit-history.js"></script>
+
+
+</body>
+
+
+</html>
