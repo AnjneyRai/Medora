@@ -586,114 +586,49 @@ try{
 
 
 const response = await fetch(
-
-"http://127.0.0.1:5000/save_prescription",
-
-{
-
-
-method:"POST",
-
-
-headers:{
-
-"Content-Type":"application/json"
-
-},
-
-
-body:
-
-JSON.stringify(prescriptionData)
-
-
-
-}
-
+    "https://prescription-page.vercel.app/api/analyze",
+    {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(prescriptionData)
+    }
 );
 
 
+const result = await response.json();
 
+console.log(JSON.stringify(result, null, 2));
 
-const result =
-await response.json();
+healthSummary.innerHTML = `
+<h3>🤖 Medora AI Health Report</h3>
 
+<h4>Clinical Report</h4>
+<ul>
+${result.report.map(item => `<li>${item}</li>`).join("")}
+</ul>
 
-
-
-
-// DISPLAY REAL AI RESPONSE
-
-
-healthSummary.innerHTML=`
-
-
-<h3>
-🤖 Medora AI Health Report
-</h3>
-
-
-<hr>
-
-
-<p>
-
-${result.summary.replace(/\n/g,"<br>")}
-
-</p>
-
-
-
+<h4>Recommendations</h4>
+<ul>
+${result.recommendations.map(item => `<li>${item}</li>`).join("")}
+</ul>
 `;
 
-
-
-alert(
-"Prescription saved successfully!"
-);
-
-
+alert("Prescription saved successfully!");
 
 }
-
-
-
 catch(error){
 
+    console.error(error);
 
-console.error(error);
-
-
-
-healthSummary.innerHTML=`
-
-<h3>
-❌ AI Connection Failed
-</h3>
-
-<p>
-Please make sure Flask server is running.
-</p>
-
-`;
-
-
+    healthSummary.innerHTML = `
+    <p>Unable to generate AI report.</p>
+    `;
 }
-
-
-
 
 });
-
-
-
 }
-
-
-
-
-
-
 
 // =====================================================
 // PDF EXPORT
