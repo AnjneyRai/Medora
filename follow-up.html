@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Medora | Patient Follow-Up</title>
+
+
+    <link
+        rel="stylesheet"
+        href="css/follow-up.css"
+    >
+
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<div class="dashboard">
+
+
+    <!-- =========================================
+                    SIDEBAR
+    ========================================== -->
+
+    <aside class="sidebar">
+
+
+        <div class="logo">
+
+            <div class="logo-icon">
+
+                <i class="fa-solid fa-heart-pulse"></i>
+
+            </div>
+
+
+            <h1>MEDORA</h1>
+
+
+            <p>
+                AI Powered Health Companion
+            </p>
+
+        </div>
+
+
+
+        <nav>
+
+
+            <a href="dashboard.html">
+
+                <i class="fa-solid fa-house"></i>
+
+                Dashboard
+
+            </a>
+
+
+            <a href="prescription.html">
+
+                <i class="fa-solid fa-file-medical"></i>
+
+                Add Prescription
+
+            </a>
+
+
+            <a href="medicines.html">
+
+                <i class="fa-solid fa-pills"></i>
+
+                Medicines
+
+            </a>
+
+
+            <a href="reminders.html">
+
+                <i class="fa-solid fa-bell"></i>
+
+                Reminders
+
+            </a>
+
+
+            <a href="visit-history.html">
+
+                <i class="fa-solid fa-clock-rotate-left"></i>
+
+                Visit History
+
+            </a>
+
+
+            <a
+                href="follow-up.html"
+                class="active"
+            >
+
+                <i class="fa-solid fa-user-doctor"></i>
+
+                Patient Follow-Up
+
+            </a>
+
+
+            <a href="summary.html">
+
+                <i class="fa-solid fa-notes-medical"></i>
+
+                Health Summary
+
+            </a>
+
+
+            <a href="export.html">
+
+                <i class="fa-solid fa-file-pdf"></i>
+
+                Export PDF
+
+            </a>
+
+
+            <a href="settings.html">
+
+                <i class="fa-solid fa-gear"></i>
+
+                Settings
+
+            </a>
+
+
+        </nav>
+
+
+    </aside>
+
+
+
+    <!-- =========================================
+                    MAIN CONTENT
+    ========================================== -->
+
+    <main class="main-content">
+
+
+        <!-- TOP BAR -->
+
+        <div class="topbar">
+
+
+            <div class="search-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="searchRecord"
+                    placeholder="Search patient, doctor or hospital..."
+                >
+
+            </div>
+
+
+            <div class="top-icons">
+
+
+                <div class="notification">
+
+                    <i class="fa-regular fa-bell"></i>
+
+                </div>
+
+
+                <div class="profile">
+
+                    <img
+                        src="assets/images/profile.png"
+                        alt="Profile"
+                    >
+
+                    <div>
+
+                        <h4>Anjney</h4>
+
+                        <p>Patient</p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =========================================
+                        PAGE HERO
+        ========================================== -->
+
+        <section class="hero">
+
+
+            <div>
+
+                <div class="hero-icon">
+
+                    <i class="fa-solid fa-user-doctor"></i>
+
+                </div>
+
+
+                <h1>
+                    Patient Follow-Up
+                </h1>
+
+
+                <p>
+
+                    Track follow-up status and clinician notes
+                    for your health records.
+
+                </p>
+
+            </div>
+
+
+            <div class="hero-stat">
+
+                <span id="recordCount">
+                    0
+                </span>
+
+                <small>
+                    Health Records
+                </small>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =========================================
+                    STATUS OVERVIEW
+        ========================================== -->
+
+        <section class="status-overview">
+
+
+            <div class="overview-card">
+
+                <div class="overview-icon blue">
+
+                    <i class="fa-solid fa-calendar-check"></i>
+
+                </div>
+
+                <div>
+
+                    <h3 id="scheduledCount">
+                        0
+                    </h3>
+
+                    <p>
+                        Follow-Ups Scheduled
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="overview-card">
+
+                <div class="overview-icon green">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                </div>
+
+                <div>
+
+                    <h3 id="completedCount">
+                        0
+                    </h3>
+
+                    <p>
+                        Completed
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="overview-card">
+
+                <div class="overview-icon orange">
+
+                    <i class="fa-solid fa-clock"></i>
+
+                </div>
+
+                <div>
+
+                    <h3 id="pendingCount">
+                        0
+                    </h3>
+
+                    <p>
+                        Pending
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="overview-card">
+
+                <div class="overview-icon purple">
+
+                    <i class="fa-solid fa-file-medical"></i>
+
+                </div>
+
+                <div>
+
+                    <h3 id="notesCount">
+                        0
+                    </h3>
+
+                    <p>
+                        Clinician Notes
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =========================================
+                    RECORD SECTION
+        ========================================== -->
+
+        <section class="records-section">
+
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        Health Records
+                    </h2>
+
+                    <p>
+                        Select a record to update its follow-up information.
+                    </p>
+
+                </div>
+
+
+                <span class="live-badge">
+
+                    <i class="fa-solid fa-database"></i>
+
+                    Firestore Connected
+
+                </span>
+
+            </div>
+
+
+
+            <div
+                id="recordsList"
+                class="records-grid"
+            >
+
+                <div class="loading-card">
+
+                    <i class="fa-solid fa-spinner fa-spin"></i>
+
+                    Loading health records...
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =========================================
+                SELECTED RECORD / FOLLOW-UP
+        ========================================== -->
+
+        <section
+            id="followUpPanel"
+            class="follow-up-panel"
+        >
+
+
+            <div class="panel-header">
+
+
+                <div>
+
+                    <span class="eyebrow">
+                        SELECTED HEALTH RECORD
+                    </span>
+
+                    <h2 id="selectedPatient">
+                        Select a record
+                    </h2>
+
+                    <p id="selectedDoctor">
+                        Choose a health record above.
+                    </p>
+
+                </div>
+
+
+                <span
+                    id="currentStatusBadge"
+                    class="status-badge pending"
+                >
+
+                    Pending Follow-Up
+
+                </span>
+
+
+            </div>
+
+
+
+            <!-- RECORD DETAILS -->
+
+            <div class="record-details">
+
+
+                <div class="detail">
+
+                    <span>
+                        <i class="fa-solid fa-calendar"></i>
+                        Visit Date
+                    </span>
+
+                    <strong id="selectedDate">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <span>
+                        <i class="fa-solid fa-hospital"></i>
+                        Hospital
+                    </span>
+
+                    <strong id="selectedHospital">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <span>
+                        <i class="fa-solid fa-stethoscope"></i>
+                        Specialization
+                    </span>
+
+                    <strong id="selectedSpecialization">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <span>
+                        <i class="fa-solid fa-pills"></i>
+                        Medicines
+                    </span>
+
+                    <strong id="selectedMedicines">
+                        —
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =====================================
+                    FOLLOW-UP FORM
+            ====================================== -->
+
+            <div class="follow-up-form">
+
+
+                <div class="form-title">
+
+                    <div class="form-title-icon">
+
+                        <i class="fa-solid fa-clipboard-check"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Follow-Up Information
+                        </h3>
+
+                        <p>
+                            Update the patient's follow-up status and clinician note.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="form-grid">
+
+
+                    <!-- STATUS -->
+
+                    <div class="form-group">
+
+                        <label for="followUpStatus">
+
+                            Follow-Up Status
+
+                        </label>
+
+
+                        <select id="followUpStatus">
+
+                            <option value="Pending Follow-up">
+                                Pending Follow-Up
+                            </option>
+
+                            <option value="Follow-Up Scheduled">
+                                Follow-Up Scheduled
+                            </option>
+
+                            <option value="Follow-Up Completed">
+                                Follow-Up Completed
+                            </option>
+
+                            <option value="No Follow-Up Required">
+                                No Follow-Up Required
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- DATE -->
+
+                    <div class="form-group">
+
+                        <label for="followUpDate">
+
+                            Follow-Up Date
+
+                        </label>
+
+
+                        <input
+                            type="date"
+                            id="followUpDate"
+                        >
+
+                    </div>
+
+
+
+                    <!-- CLINICIAN -->
+
+                    <div class="form-group full">
+
+                        <label for="clinicianName">
+
+                            Clinician Name
+
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="clinicianName"
+                            placeholder="e.g. Dr. Apoorva"
+                        >
+
+                    </div>
+
+
+
+                    <!-- NOTE -->
+
+                    <div class="form-group full">
+
+                        <label for="clinicianNote">
+
+                            Clinician Note
+
+                        </label>
+
+
+                        <textarea
+                            id="clinicianNote"
+                            rows="5"
+                            maxlength="1000"
+                            placeholder="Add follow-up instructions, observations, recommendations or clinician notes..."
+                        ></textarea>
+
+
+                        <div class="character-count">
+
+                            <span id="characterCount">
+                                0
+                            </span>
+                            / 1000
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="form-actions">
+
+
+                    <span
+                        id="saveMessage"
+                        class="save-message"
+                    ></span>
+
+
+                    <button
+                        id="saveFollowUp"
+                        class="save-btn"
+                    >
+
+                        <i class="fa-solid fa-floppy-disk"></i>
+
+                        Save Follow-Up
+
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =====================================
+                    SAVED UPDATE
+            ====================================== -->
+
+            <div
+                id="savedUpdate"
+                class="saved-update"
+            >
+
+
+                <div class="saved-title">
+
+                    <div class="check-icon">
+
+                        <i class="fa-solid fa-check"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            Saved Follow-Up State
+                        </h3>
+
+                        <p>
+                            This information is stored in the patient's Firestore health record.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="saved-grid">
+
+
+                    <div>
+
+                        <span>
+                            Status
+                        </span>
+
+                        <strong id="savedStatus">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Follow-Up Date
+                        </span>
+
+                        <strong id="savedDate">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Clinician
+                        </span>
+
+                        <strong id="savedClinician">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="saved-note">
+
+                        <span>
+                            Clinician Note
+                        </span>
+
+                        <p id="savedNote">
+                            No note added.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+
+<script
+    type="module"
+    src="js/follow-up.js"
+></script>
+
+
+</body>
+
+</html>
