@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Medora | Health Report</title>
+
+    <link rel="stylesheet" href="css/health%20report.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- HEADER -->
+
+        <header class="header">
+
+            <div class="brand">
+
+                <h1>Medora</h1>
+
+                <p>
+                    AI Powered Healthcare Companion
+                </p>
+
+            </div>
+
+            <button class="dashboard-btn" onclick="window.location.href='dashboard.html'">
+                ← Dashboard
+            </button>
+
+        </header>
+
+
+        <!-- PAGE TITLE -->
+
+        <section class="page-title">
+
+            <h2>Health Report</h2>
+
+            <p>
+                Your medical information, prescriptions
+                and medication history in one place.
+            </p>
+
+        </section>
+
+
+        <!-- RECORD SELECTOR -->
+
+        <section class="card">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h3>📋 Select Health Record</h3>
+
+                    <p>
+                        Records are loaded directly from your Medora database.
+                    </p>
+
+                </div>
+
+                <button id="refreshBtn" class="secondary-btn">
+                    ↻ Refresh
+                </button>
+
+            </div>
+
+
+            <select id="recordSelect">
+
+                <option value="">
+                    Loading records...
+                </option>
+
+            </select>
+
+
+            <p id="status" class="status-text">
+                Connecting to Medora...
+            </p>
+
+        </section>
+
+
+        <!-- HEALTH REPORT -->
+
+        <div id="report" class="hidden">
+
+
+            <!-- REPORT HEADER -->
+
+            <section class="report-header">
+
+                <div>
+
+                    <span class="report-brand">
+                        MEDORA
+                    </span>
+
+                    <h2>
+                        Health Record Report
+                    </h2>
+
+                    <p>
+                        Personal Health Management
+                    </p>
+
+                </div>
+
+
+                <div class="report-date">
+
+                    <span>
+                        Generated
+                    </span>
+
+                    <strong id="generatedDate">
+                        —
+                    </strong>
+
+                </div>
+
+            </section>
+
+
+            <!-- PATIENT INFORMATION -->
+
+            <section class="card">
+
+                <h3>👤 Patient Information</h3>
+
+                <div class="info-grid">
+
+                    <div class="info-item">
+
+                        <span>
+                            Patient Name
+                        </span>
+
+                        <strong id="patientName">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <span>
+                            Age
+                        </span>
+
+                        <strong id="age">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <span>
+                            Blood Group
+                        </span>
+
+                        <strong id="bloodGroup">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <span>
+                            Allergies
+                        </span>
+
+                        <strong id="allergies">
+                            —
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- DOCTOR INFORMATION -->
+
+            <section class="card">
+
+                <h3>👨‍⚕️ Doctor & Visit Details</h3>
+
+                <div class="info-grid">
+
+                    <div class="info-item">
+
+                        <span>
+                            Doctor
+                        </span>
+
+                        <strong id="doctor">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <span>
+                            Hospital
+                        </span>
+
+                        <strong id="hospital">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <span>
+                            Specialization
+                        </span>
+
+                        <strong id="specialization">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <span>
+                            Visit Date
+                        </span>
+
+                        <strong id="visitDate">
+                            —
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- MEDICATION -->
+
+            <section class="card">
+
+                <h3>💊 Medication Details</h3>
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Medicine</th>
+
+                                <th>Strength</th>
+
+                                <th>Timing</th>
+
+                                <th>Duration</th>
+
+                                <th>Status</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="medicineTable">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- NOTES -->
+
+            <section class="card">
+
+                <h3>📝 Health Notes</h3>
+
+                <div id="healthNotes" class="notes">
+                    —
+                </div>
+
+            </section>
+
+
+            <!-- PDF -->
+
+            <div class="actions">
+
+                <button id="downloadBtn" class="download-btn">
+                    ↓ Download Health Report PDF
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script type="module" src="js/health%20report.js"></script>
+
+</body>
+
+</html>
